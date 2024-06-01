@@ -1,6 +1,7 @@
 package com.fiap.blueFuture.services;
 
 import com.fiap.blueFuture.DTO.EnderecoDTO;
+import com.fiap.blueFuture.DTO.GeocodingResponseDTO;
 import com.fiap.blueFuture.model.Endereco;
 import com.fiap.blueFuture.repositories.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,9 +33,10 @@ public class EnderecoService {
     @Transactional
     public EnderecoDTO insert(EnderecoDTO enderecoDTO) throws ExecutionException, InterruptedException {
         Endereco endereco = new Endereco(enderecoDTO);
-        List<String[]> coordenadas = geocodingService.getCoordinates(endereco.getEndereco());
-        endereco.setLat(coordenadas.getFirst()[0]);
-        endereco.setLng(coordenadas.getFirst()[1]);
+        GeocodingResponseDTO geocodingResponseDTO = geocodingService.getCoordinates(endereco.getEndereco());
+        endereco.setLat(geocodingResponseDTO.getLat());
+        endereco.setLng(geocodingResponseDTO.getLng());
+        endereco.setEnderecoFormatado(geocodingResponseDTO.getEnderecoFormatado());
         endereco = enderecoRepository.save(endereco);
         return new EnderecoDTO(endereco);
     }

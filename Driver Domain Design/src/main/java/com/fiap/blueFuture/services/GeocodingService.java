@@ -1,5 +1,6 @@
 package com.fiap.blueFuture.services;
 
+import com.fiap.blueFuture.DTO.GeocodingResponseDTO;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -19,9 +20,9 @@ public class GeocodingService {
     @Value("${google.api.key}")
     private String apiKey;
 
-    public List<String[]> getCoordinates(String endereco) {
+    public GeocodingResponseDTO getCoordinates(String endereco) {
         String url = "https://maps.googleapis.com/maps/api/geocode/json?address=" +
-                URLEncoder.encode(endereco, StandardCharsets.UTF_8) + "&key=" + apiKey;
+                endereco.replace(" ", "-") + "&key=" + apiKey;
 
         // Obter o JSON da API
         String json = getJSONFromAPI(url);
@@ -35,8 +36,8 @@ public class GeocodingService {
         return restTemplate.getForObject(url, String.class);
     }
 
-     private List<String[]> extractCoordinates(String json) {
-        List<String[]> coordinates = new ArrayList<>();
+     private GeocodingResponseDTO extractCoordinates(String json) {
+        GeocodingResponseDTO geocodingResponseDTO = new GeocodingResponseDTO();
 
         // Parse o JSON usando Gson
         JsonObject jsonObject = JsonParser.parseString(json).getAsJsonObject();
@@ -48,14 +49,15 @@ public class GeocodingService {
             // Itere sobre os resultados
             for (JsonElement result : results) {
                 JsonObject geometry = result.getAsJsonObject().getAsJsonObject("geometry");
+                String formattedAddress = result.getAsJsonObject().get("formatted_address").getAsString();
                 JsonObject location = geometry.getAsJsonObject("location");
-                String latString = location.get("lat").getAsString();
-                String lngString = location.get("lng").getAsString();
-                coordinates.add(new String[]{latString, lngString});
+                geocodingResponseDTO.setLat(location.get("lat").getAsString());
+                geocodingResponseDTO.setLng(location.get("lng").getAsString());
+                geocodingResponseDTO.setEnderecoFormatado(formattedAddress);
             }
         }
 
-        return coordinates;
+        return geocodingResponseDTO;
     }
 
 }

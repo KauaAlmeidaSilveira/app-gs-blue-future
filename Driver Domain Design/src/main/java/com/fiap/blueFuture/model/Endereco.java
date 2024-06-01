@@ -19,12 +19,14 @@ public class Endereco {
     private Long id_endereco;
     private String endereco;
     private String cidade;
+    private String enderecoFormatado;
     private String lat;
     private String lng;
 
     public Endereco(EnderecoDTO enderecoDTO){
         this.endereco = enderecoDTO.getEndereco();
         this.cidade = enderecoDTO.getCidade();
+        this.enderecoFormatado = enderecoDTO.getEnderecoFormatado();
         this.lat = enderecoDTO.getLat();
         this.lng = enderecoDTO.getLng();
     }

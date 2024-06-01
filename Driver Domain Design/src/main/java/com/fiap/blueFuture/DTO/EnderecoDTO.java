@@ -14,6 +14,7 @@ public class EnderecoDTO {
     private Long id_endereco;
     private String endereco;
     private String cidade;
+    private String enderecoFormatado;
     private String lat;
     private String lng;
 
@@ -21,6 +22,7 @@ public class EnderecoDTO {
         this.id_endereco = endereco.getId_endereco();
         this.endereco = endereco.getEndereco();
         this.cidade = endereco.getCidade();
+        this.enderecoFormatado = endereco.getEnderecoFormatado();
         this.lat = endereco.getLat();
         this.lng = endereco.getLng();
     }
