@@ -18,15 +18,21 @@ public class Endereco {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_endereco;
     private String endereco;
+    private String bairro;
     private String cidade;
-    private String enderecoFormatado;
+    private String estado;
+    private String cep;
+    private String pais;
     private String lat;
     private String lng;
 
     public Endereco(EnderecoDTO enderecoDTO){
         this.endereco = enderecoDTO.getEndereco();
+        this.bairro = enderecoDTO.getBairro();
         this.cidade = enderecoDTO.getCidade();
-        this.enderecoFormatado = enderecoDTO.getEnderecoFormatado();
+        this.estado = enderecoDTO.getEstado();
+        this.cep = enderecoDTO.getCep();
+        this.pais = enderecoDTO.getPais();
         this.lat = enderecoDTO.getLat();
         this.lng = enderecoDTO.getLng();
     }

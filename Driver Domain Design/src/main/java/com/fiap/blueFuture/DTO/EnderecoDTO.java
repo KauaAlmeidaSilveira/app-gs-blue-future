@@ -13,16 +13,22 @@ import lombok.Setter;
 public class EnderecoDTO {
     private Long id_endereco;
     private String endereco;
+    private String bairro;
     private String cidade;
-    private String enderecoFormatado;
+    private String estado;
+    private String cep;
+    private String pais;
     private String lat;
     private String lng;
 
     public EnderecoDTO(Endereco endereco){
         this.id_endereco = endereco.getId_endereco();
         this.endereco = endereco.getEndereco();
+        this.bairro = endereco.getBairro();
         this.cidade = endereco.getCidade();
-        this.enderecoFormatado = endereco.getEnderecoFormatado();
+        this.estado = endereco.getEstado();
+        this.cep = endereco.getCep();
+        this.pais = endereco.getPais();
         this.lat = endereco.getLat();
         this.lng = endereco.getLng();
     }

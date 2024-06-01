@@ -10,9 +10,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class GeocodingResponseDTO {
-
+    private String endereco;
+    private String bairro;
+    private String cidade;
+    private String estado;
+    private String cep;
+    private String pais;
     private String lat;
     private String lng;
-    private String enderecoFormatado;
-
 }

@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
 
 @Service
@@ -30,15 +29,29 @@ public class EnderecoService {
         return enderecoRepository.findAll().stream().map(EnderecoDTO::new).collect(Collectors.toList());
     }
 
+    @Transactional(readOnly = true)
+    public EnderecoDTO findById(Long id) {
+        return new EnderecoDTO(enderecoRepository.findById(id).orElseThrow());
+    }
+
     @Transactional
-    public EnderecoDTO insert(EnderecoDTO enderecoDTO) throws ExecutionException, InterruptedException {
+    public EnderecoDTO insert(EnderecoDTO enderecoDTO) {
         Endereco endereco = new Endereco(enderecoDTO);
-        GeocodingResponseDTO geocodingResponseDTO = geocodingService.getCoordinates(endereco.getEndereco());
-        endereco.setLat(geocodingResponseDTO.getLat());
-        endereco.setLng(geocodingResponseDTO.getLng());
-        endereco.setEnderecoFormatado(geocodingResponseDTO.getEnderecoFormatado());
+        GeocodingResponseDTO geocodingResponseDTO = geocodingService.getInfoEndereco(endereco.getEndereco(), endereco.getCidade(), endereco.getEstado());
+        copyInfoGeocodingToEndereco(geocodingResponseDTO, endereco);
         endereco = enderecoRepository.save(endereco);
         return new EnderecoDTO(endereco);
+    }
+
+    private void copyInfoGeocodingToEndereco(GeocodingResponseDTO geocodingResponseDTO, Endereco endereco) {
+        endereco.setLat(geocodingResponseDTO.getLat());
+        endereco.setLng(geocodingResponseDTO.getLng());
+        endereco.setEndereco(geocodingResponseDTO.getEndereco());
+        endereco.setBairro(geocodingResponseDTO.getBairro());
+        endereco.setCidade(geocodingResponseDTO.getCidade());
+        endereco.setEstado(geocodingResponseDTO.getEstado());
+        endereco.setCep(geocodingResponseDTO.getCep());
+        endereco.setPais(geocodingResponseDTO.getPais());
     }
 
 }
