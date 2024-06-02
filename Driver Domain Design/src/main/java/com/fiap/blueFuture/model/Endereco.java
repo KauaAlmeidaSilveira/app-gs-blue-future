@@ -26,7 +26,7 @@ public class Endereco {
     private String lat;
     private String lng;
 
-    public Endereco(EnderecoDTO enderecoDTO){
+    public Endereco(EnderecoDTO enderecoDTO) {
         this.endereco = enderecoDTO.getEndereco();
         this.bairro = enderecoDTO.getBairro();
         this.cidade = enderecoDTO.getCidade();

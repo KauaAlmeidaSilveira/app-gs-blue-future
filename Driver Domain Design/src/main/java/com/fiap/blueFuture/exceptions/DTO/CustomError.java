@@ -1,4 +1,4 @@
-package com.fiap.blueFuture.exceptions;
+package com.fiap.blueFuture.exceptions.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

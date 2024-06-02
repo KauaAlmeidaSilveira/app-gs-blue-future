@@ -2,6 +2,7 @@ package com.fiap.blueFuture.controllers;
 
 import com.fiap.blueFuture.DTO.EnderecoDTO;
 import com.fiap.blueFuture.services.EnderecoService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +29,7 @@ public class EnderecoController {
     }
 
     @PostMapping
-    public ResponseEntity<EnderecoDTO> insert(@RequestBody EnderecoDTO enderecoDTO) {
+    public ResponseEntity<EnderecoDTO> insert(@Valid @RequestBody EnderecoDTO enderecoDTO) {
         enderecoDTO = enderecoService.insert(enderecoDTO);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(enderecoDTO.getId_endereco()).toUri();
