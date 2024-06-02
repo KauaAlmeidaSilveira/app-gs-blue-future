@@ -13,8 +13,8 @@ const MapPage = () => {
 
   
   const Location = {
-    lat: -27.594247, 
-    lng: -48.552000, 
+    lat: -23.5903702, 
+    lng: -46.4957225, 
   };
 
   return (
