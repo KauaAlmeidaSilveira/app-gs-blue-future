@@ -1,5 +1,6 @@
 package com.fiap.blueFuture.model;
 
+import com.fiap.blueFuture.DTO.UsuarioDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,4 +28,10 @@ public class Usuario {
 
     @OneToMany(mappedBy = "usuario")
     private List<Feedback> feedbacks;
+
+    public Usuario(UsuarioDTO usuarioDTO){
+        this.nome = usuarioDTO.getNome();
+        this.email = usuarioDTO.getEmail();
+        this.telefone = usuarioDTO.getTelefone();
+    }
 }
