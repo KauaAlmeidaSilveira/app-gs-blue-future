@@ -1,0 +1,42 @@
+package com.fiap.blueFuture.model;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.time.Instant;
+import java.time.LocalDate;
+import java.util.List;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Entity
+@Table(name = "tb_reporte")
+public class Reporte {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String descricao;
+    private LocalDate data;
+    private Instant hora;
+    private String urgencia;
+    private String status;
+    private String img_url;
+
+    @OneToOne
+    private Endereco endereco;
+
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
+
+    @OneToOne
+    private FontePoluicao fontePoluicao;
+
+    @OneToMany(mappedBy = "reporte")
+    private List<Feedback> feedbacks;
+}
