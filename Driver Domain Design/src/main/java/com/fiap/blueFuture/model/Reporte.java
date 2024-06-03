@@ -1,5 +1,6 @@
 package com.fiap.blueFuture.model;
 
+import com.fiap.blueFuture.DTO.ReporteDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -39,4 +40,13 @@ public class Reporte {
 
     @OneToMany(mappedBy = "reporte")
     private List<Feedback> feedbacks;
+
+    public Reporte(ReporteDTO reporteDTO) {
+        this.descricao = reporteDTO.getDescricao();
+        this.data = reporteDTO.getData();
+        this.hora = reporteDTO.getHora();
+        this.urgencia = reporteDTO.getUrgencia();
+        this.status = reporteDTO.getStatus();
+        this.img_url = reporteDTO.getImg_url();
+    }
 }

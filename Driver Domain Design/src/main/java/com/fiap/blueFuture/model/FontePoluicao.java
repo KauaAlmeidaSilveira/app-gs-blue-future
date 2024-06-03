@@ -1,5 +1,6 @@
 package com.fiap.blueFuture.model;
 
+import com.fiap.blueFuture.DTO.FontePoluicaoDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,4 +22,10 @@ public class FontePoluicao {
 
     @OneToOne(mappedBy = "fontePoluicao")
     private Reporte reporte;
+
+    public FontePoluicao(FontePoluicaoDTO fontePoluicaoDTO) {
+        this.id = fontePoluicaoDTO.getId();
+        this.tipo = fontePoluicaoDTO.getTipo();
+        this.descricao = fontePoluicaoDTO.getDescricao();
+    }
 }

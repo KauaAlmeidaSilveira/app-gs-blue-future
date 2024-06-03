@@ -30,6 +30,7 @@ public class Endereco {
     private Reporte reporte;
 
     public Endereco(EnderecoDTO enderecoDTO) {
+        this.id = enderecoDTO.getId();
         this.endereco = enderecoDTO.getEndereco();
         this.bairro = enderecoDTO.getBairro();
         this.cidade = enderecoDTO.getCidade();

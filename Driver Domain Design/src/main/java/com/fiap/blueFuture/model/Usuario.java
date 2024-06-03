@@ -30,6 +30,7 @@ public class Usuario {
     private List<Feedback> feedbacks;
 
     public Usuario(UsuarioDTO usuarioDTO){
+        this.id = usuarioDTO.getId();
         this.nome = usuarioDTO.getNome();
         this.email = usuarioDTO.getEmail();
         this.telefone = usuarioDTO.getTelefone();

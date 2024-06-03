@@ -12,7 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class EnderecoDTO {
-    private Long id_endereco;
+    private Long id;
     @NotBlank(message = "Endereço é obrigatório")
     private String endereco;
     private String bairro;
@@ -26,7 +26,7 @@ public class EnderecoDTO {
     private String lng;
 
     public EnderecoDTO(Endereco endereco) {
-        this.id_endereco = endereco.getId();
+        this.id = endereco.getId();
         this.endereco = endereco.getEndereco();
         this.bairro = endereco.getBairro();
         this.cidade = endereco.getCidade();

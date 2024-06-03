@@ -1,5 +1,6 @@
 package com.fiap.blueFuture.model;
 
+import com.fiap.blueFuture.DTO.FeedbackDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,4 +26,9 @@ public class Feedback {
     @ManyToOne
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
+
+    public Feedback(FeedbackDTO feedbackDTO){
+        this.id = feedbackDTO.getId();
+        this.feedback = feedbackDTO.getFeedback();
+    }
 }

@@ -1,6 +1,12 @@
 package com.fiap.blueFuture.services;
 
+import com.fiap.blueFuture.DTO.*;
+import com.fiap.blueFuture.model.Endereco;
+import com.fiap.blueFuture.model.FontePoluicao;
+import com.fiap.blueFuture.model.Reporte;
+import com.fiap.blueFuture.model.Usuario;
 import com.fiap.blueFuture.repositories.ReporteRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,4 +16,31 @@ public class ReporteService {
     @Autowired
     private ReporteRepository reporteRepository;
 
+    @Autowired
+    private UsuarioService usuarioService;
+
+    @Autowired
+    private FontePoluicaoService fontePoluicaoService;
+
+    @Autowired
+    private EnderecoService enderecoService;
+
+    @Transactional
+    public ReporteDTO insert(RegisterReporteDTO reporteDTO){
+        Reporte reporte = new Reporte(reporteDTO.getReporte());
+        insertAllDependenciesToReport(reporteDTO, reporte);
+        reporte = reporteRepository.save(reporte);
+        return new ReporteDTO(reporte);
+    }
+
+    @Transactional
+    private void insertAllDependenciesToReport(RegisterReporteDTO reporteDTO, Reporte reporte){
+        UsuarioDTO usuario = usuarioService.insert(reporteDTO.getUsuario());
+        FontePoluicaoDTO fontePoluicao = fontePoluicaoService.insert(reporteDTO.getFontePoluicao());
+        EnderecoDTO endereco = enderecoService.insert(reporteDTO.getEndereco());
+
+        reporte.setUsuario(new Usuario(usuario));
+        reporte.setFontePoluicao(new FontePoluicao(fontePoluicao));
+        reporte.setEndereco(new Endereco(endereco));
+    }
 }

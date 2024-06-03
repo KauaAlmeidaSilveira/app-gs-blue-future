@@ -32,7 +32,7 @@ public class EnderecoController {
     public ResponseEntity<EnderecoDTO> insert(@Valid @RequestBody EnderecoDTO enderecoDTO) {
         enderecoDTO = enderecoService.insert(enderecoDTO);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-                .buildAndExpand(enderecoDTO.getId_endereco()).toUri();
+                .buildAndExpand(enderecoDTO.getId()).toUri();
         return ResponseEntity.created(uri).body(enderecoDTO);
     }
 }
