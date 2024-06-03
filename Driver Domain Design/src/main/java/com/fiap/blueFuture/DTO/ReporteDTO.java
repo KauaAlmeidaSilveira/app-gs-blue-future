@@ -1,6 +1,7 @@
 package com.fiap.blueFuture.DTO;
 
 import com.fiap.blueFuture.model.Reporte;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,11 +16,14 @@ import java.time.LocalDate;
 @Setter
 public class ReporteDTO {
     private Long id;
+    @NotBlank(message = "Descrição é obrigatória")
     private String descricao;
     private LocalDate data;
     private Instant hora;
+    @NotBlank(message = "Urgência é obrigatória")
     private String urgencia;
     private String status;
+    @NotBlank(message = "Imagem é obrigatória")
     private String img_url;
 
     public ReporteDTO(Reporte reporte){

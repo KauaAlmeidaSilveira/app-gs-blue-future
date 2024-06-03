@@ -3,6 +3,7 @@ package com.fiap.blueFuture.controllers;
 import com.fiap.blueFuture.DTO.RegisterReporteDTO;
 import com.fiap.blueFuture.DTO.ReporteDTO;
 import com.fiap.blueFuture.services.ReporteService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,7 @@ public class ReporteController {
     private ReporteService reporteService;
 
     @PostMapping
-    public ResponseEntity<ReporteDTO> insert(@RequestBody RegisterReporteDTO registerReporteDTO){
+    public ResponseEntity<ReporteDTO> insert(@Valid @RequestBody RegisterReporteDTO registerReporteDTO){
         return ResponseEntity.ok(reporteService.insert(registerReporteDTO));
     }
 

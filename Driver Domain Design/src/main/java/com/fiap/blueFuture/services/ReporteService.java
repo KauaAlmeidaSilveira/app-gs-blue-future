@@ -10,6 +10,9 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
+import java.time.LocalDate;
+
 @Service
 public class ReporteService {
 
@@ -28,6 +31,9 @@ public class ReporteService {
     @Transactional
     public ReporteDTO insert(RegisterReporteDTO reporteDTO){
         Reporte reporte = new Reporte(reporteDTO.getReporte());
+        reporte.setData(LocalDate.now());
+        reporte.setHora(Instant.now());
+        reporte.setStatus("Pendente");
         insertAllDependenciesToReport(reporteDTO, reporte);
         reporte = reporteRepository.save(reporte);
         return new ReporteDTO(reporte);
