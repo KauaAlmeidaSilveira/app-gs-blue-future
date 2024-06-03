@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 @Service
 public class ReporteService {
@@ -28,11 +30,13 @@ public class ReporteService {
     @Autowired
     private EnderecoService enderecoService;
 
+    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+
     @Transactional
     public ReporteDTO insert(RegisterReporteDTO reporteDTO){
         Reporte reporte = new Reporte(reporteDTO.getReporte());
         reporte.setData(LocalDate.now());
-        reporte.setHora(Instant.now());
+        reporte.setHora(LocalTime.parse( LocalTime.now().format(formatter) ));
         reporte.setStatus("Pendente");
         insertAllDependenciesToReport(reporteDTO, reporte);
         reporte = reporteRepository.save(reporte);

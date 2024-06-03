@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,7 +20,7 @@ public class ReporteDTO {
     @NotBlank(message = "Descrição é obrigatória")
     private String descricao;
     private LocalDate data;
-    private Instant hora;
+    private LocalTime hora;
     @NotBlank(message = "Urgência é obrigatória")
     private String urgencia;
     private String status;

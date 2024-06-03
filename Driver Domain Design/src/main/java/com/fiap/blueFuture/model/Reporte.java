@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 @NoArgsConstructor
@@ -23,7 +24,7 @@ public class Reporte {
     private Long id;
     private String descricao;
     private LocalDate data;
-    private Instant hora;
+    private LocalTime hora;
     private String urgencia;
     private String status;
     private String img_url;
