@@ -1,10 +1,13 @@
-import MapPage from "./components/MapPage/Map";
+
+import Denuncia from "./pages/Denuncia/page";
+import Inicial from "./pages/Inicial/page";
+import Registros from "./pages/Registros/page";
 
 
 export default function Home() {
   return (
     <>
-    <MapPage/>
+      <Denuncia/>
     </>
   );
 }
