@@ -41,9 +41,10 @@ const Header = () => {
                             <div className={style.menu_navegation}>
                                 <ul className={style.ul}>
                                 <li className={style.li}><Link className={style.a} href="/">Home</Link></li>
+                                <li className={style.li}><Link className={style.a} href="/Denuncia">Novo Reporte</Link></li>
                                 <li className={style.li}><Link className={style.a} href="/">OPC</Link></li>
                                 <li className={style.li}><Link className={style.a} href="/">OPC</Link></li>
-                                <li className={style.li}><Link className={style.a} href="/">OPC</Link></li>
+                                
                                 </ul>
                             </div>
                         )}
@@ -56,9 +57,11 @@ const Header = () => {
                         <div className={style.menu_content}>
                             <ul className={style.ul}>
                                 <li className={style.li}><Link className={style.a} href="/">Home</Link></li>
+                                <li className={style.li}><Link className={style.a} href="/Denuncia">OPC</Link></li>
                                 <li className={style.li}><Link className={style.a} href="/">OPC</Link></li>
                                 <li className={style.li}><Link className={style.a} href="/">OPC</Link></li>
                                 <li className={style.li}><Link className={style.a} href="/">OPC</Link></li>
+                                
                             </ul>
                         </div>
                     )}

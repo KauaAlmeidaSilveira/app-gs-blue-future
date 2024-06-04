@@ -1,7 +1,6 @@
 
-import Denuncia from "./pages/Denuncia/page";
-import Inicial from "./pages/Inicial/page";
-import DenunciaMap from "./pages/DenunciasMap/page";
+
+import DenunciaMap from "./DenunciaMap/page";
 
 
 export default function Home() {
