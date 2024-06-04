@@ -16,7 +16,7 @@ const StateSelect = ({ onStateChanged }: { onStateChanged: (state: string) => vo
       try {
         const response = await axios.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados');
         const statesData = response.data.map((state: any) => ({
-          value: state.id,
+          value: state.sigla, 
           label: state.nome,
         }));
         setStates(statesData);
@@ -28,8 +28,12 @@ const StateSelect = ({ onStateChanged }: { onStateChanged: (state: string) => vo
     fetchStates();
   }, []);
 
+  const handleStateChange = (state: string) => {
+    onStateChanged(state); 
+  };
+
   return (
-    <select onChange={(e) => onStateChanged(e.target.value)}>
+    <select onChange={(e) => handleStateChange(e.target.value)}>
       <option value="">Selecione um estado</option>
       {states.map((state) => (
         <option key={state.value} value={state.value}>

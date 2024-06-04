@@ -7,9 +7,17 @@ import React, { useEffect, useState } from 'react';
 
 
 const DenunciaMap = () => {
+
+  const [selectedState, setSelectedState] = useState<string>('');
+
+  const handleStateChange = (state: string) => {
+    setSelectedState(state);
+  };
+  
   return (
     <div>
-      <Registros/>
+      <StateSelect onStateChanged={handleStateChange} />
+      <Registros selectedState={selectedState} />
       <MapPage/>
     </div>
   );
