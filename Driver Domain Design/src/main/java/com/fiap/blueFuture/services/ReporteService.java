@@ -1,6 +1,7 @@
 package com.fiap.blueFuture.services;
 
 import com.fiap.blueFuture.DTO.*;
+import com.fiap.blueFuture.exceptions.ResourceNotFoundException;
 import com.fiap.blueFuture.model.Endereco;
 import com.fiap.blueFuture.model.FontePoluicao;
 import com.fiap.blueFuture.model.Reporte;
@@ -10,10 +11,10 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 @Service
 public class ReporteService {
@@ -41,6 +42,20 @@ public class ReporteService {
         insertAllDependenciesToReport(reporteDTO, reporte);
         reporte = reporteRepository.save(reporte);
         return new ReporteDTO(reporte);
+    }
+
+    public ReporteDTO findById(Long id){
+        Reporte reporte = reporteRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Reporte não encontrado"));
+        return new ReporteDTO(reporte);
+    }
+
+    public ResponseReporteDTO findByIdWithDependencies(Long id){
+        Reporte reporte = reporteRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Reporte não encontrado"));
+        return new ResponseReporteDTO(reporte);
+    }
+
+    public List<ResponseReporteDTO> findAllWithDependencies(){
+        return reporteRepository.findAll().stream().map(ResponseReporteDTO::new).toList();
     }
 
     @Transactional

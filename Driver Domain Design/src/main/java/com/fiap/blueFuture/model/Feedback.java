@@ -19,8 +19,7 @@ public class Feedback {
     private Long id;
     private String feedback;
 
-    @ManyToOne
-    @JoinColumn(name = "id_reporte")
+    @OneToOne
     private Reporte reporte;
 
     @ManyToOne

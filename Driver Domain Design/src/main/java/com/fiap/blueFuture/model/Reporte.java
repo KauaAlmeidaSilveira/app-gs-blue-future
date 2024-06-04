@@ -39,8 +39,8 @@ public class Reporte {
     @OneToOne
     private FontePoluicao fontePoluicao;
 
-    @OneToMany(mappedBy = "reporte")
-    private List<Feedback> feedbacks;
+    @OneToOne(mappedBy = "reporte")
+    private Feedback feedback;
 
     public Reporte(ReporteDTO reporteDTO) {
         this.descricao = reporteDTO.getDescricao();
