@@ -39,7 +39,7 @@ public class Reporte {
     @OneToOne
     private FontePoluicao fontePoluicao;
 
-    @OneToOne(mappedBy = "reporte")
+    @OneToOne
     private Feedback feedback;
 
     public Reporte(ReporteDTO reporteDTO) {

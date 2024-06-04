@@ -1,6 +1,5 @@
 package com.fiap.blueFuture.model;
 
-import com.fiap.blueFuture.DTO.UsuarioDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,13 +8,13 @@ import lombok.Setter;
 
 import java.util.List;
 
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
-@Table(name = "tb_usuario")
-public class Usuario {
+@Table(name = "tb_instituicao")
+public class Instituicao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,13 +22,6 @@ public class Usuario {
     private String email;
     private String telefone;
 
-    @OneToMany(mappedBy = "usuario")
-    private List<Reporte> reportes;
-
-    public Usuario(UsuarioDTO usuarioDTO){
-        this.id = usuarioDTO.getId();
-        this.nome = usuarioDTO.getNome();
-        this.email = usuarioDTO.getEmail();
-        this.telefone = usuarioDTO.getTelefone();
-    }
+    @OneToMany(mappedBy = "instituicao")
+    private List<Feedback> feedbacks;
 }
