@@ -1,16 +1,15 @@
 'use client'
 
-import MapPage from '@/app/components/MapPage/MapPage';
 import React, { useEffect, useState } from 'react';
+import style from './Registros.module.css';
 
-// Definição da interface para os dados recebidos
 interface DadoApi {
   endereco: string;
   lat: number;
   lng: number;
 }
 
-const DadosComponent = () => {
+const Registros = () => {
   const [dadosEspecificos, setDadosEspecificos] = useState<DadoApi[]>([]);
 
   useEffect(() => {
@@ -40,14 +39,16 @@ const DadosComponent = () => {
       <h2>Dados Específicos Recebidos</h2>
       <ul>
         {dadosEspecificos.map((item, index) => (
-          <li key={index}>
+          <li className={style.list} key={index}>
             Endereço: {item.endereco}<br />
+            Latitude: {item.lat}<br />
+            Longitude: {item.lng}
           </li>
         ))}
       </ul>
-      <MapPage/>
+      
     </div>
   );
 };
 
-export default DadosComponent;
+export default Registros;
