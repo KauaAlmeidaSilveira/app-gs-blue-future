@@ -1,5 +1,6 @@
 package com.fiap.blueFuture.model;
 
+import com.fiap.blueFuture.DTO.InstituicaoDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,4 +25,11 @@ public class Instituicao {
 
     @OneToMany(mappedBy = "instituicao")
     private List<Feedback> feedbacks;
+
+    public Instituicao(InstituicaoDTO instituicaoDTO) {
+        this.id = instituicaoDTO.getId();
+        this.nome = instituicaoDTO.getNome();
+        this.email = instituicaoDTO.getEmail();
+        this.telefone = instituicaoDTO.getTelefone();
+    }
 }

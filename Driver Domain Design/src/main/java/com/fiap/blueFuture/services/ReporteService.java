@@ -58,9 +58,9 @@ public class ReporteService {
         return reporteRepository.findAll().stream().map(ResponseReporteDTO::new).toList();
     }
 
-    public ResponseReporteDTO addFeedback(FeedbackDTO feedbackDTO, Long id) {
+    public ResponseReporteDTO addFeedback(FeedbackDTO feedbackDTO, Long id, InstituicaoDTO instituicaoDTO) {
         Reporte reporte = reporteRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Reporte não encontrado"));
-        feedbackDTO = feedbackService.insert(feedbackDTO, reporte);
+        feedbackDTO = feedbackService.insert(feedbackDTO, reporte, instituicaoDTO);
         reporte.addFeedback(new Feedback(feedbackDTO));
         reporte.setStatus(feedbackDTO.getStatus());
         reporte = reporteRepository.save(reporte);

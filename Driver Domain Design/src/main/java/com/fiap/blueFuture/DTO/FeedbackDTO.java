@@ -20,6 +20,8 @@ public class FeedbackDTO {
     private String responsavel;
     private String img_url;
 
+    private InstituicaoDTO instituicao;
+
     public FeedbackDTO(Feedback feedback){
         this.id = feedback.getId();
         this.data = feedback.getData();
@@ -27,5 +29,9 @@ public class FeedbackDTO {
         this.descricao = feedback.getDescricao();
         this.responsavel = feedback.getResponsavel();
         this.img_url = feedback.getImg_url();
+        if(feedback.getInstituicao() != null){
+            this.instituicao = new InstituicaoDTO(feedback.getInstituicao());
+        }
+
     }
 }
