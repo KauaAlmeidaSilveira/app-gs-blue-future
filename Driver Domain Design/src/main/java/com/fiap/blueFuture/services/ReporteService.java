@@ -2,10 +2,7 @@ package com.fiap.blueFuture.services;
 
 import com.fiap.blueFuture.DTO.*;
 import com.fiap.blueFuture.exceptions.ResourceNotFoundException;
-import com.fiap.blueFuture.model.Endereco;
-import com.fiap.blueFuture.model.FontePoluicao;
-import com.fiap.blueFuture.model.Reporte;
-import com.fiap.blueFuture.model.Usuario;
+import com.fiap.blueFuture.model.*;
 import com.fiap.blueFuture.repositories.ReporteRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +27,9 @@ public class ReporteService {
 
     @Autowired
     private EnderecoService enderecoService;
+
+    @Autowired
+    private FeedbackService feedbackService;
 
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
@@ -56,6 +56,15 @@ public class ReporteService {
 
     public List<ResponseReporteDTO> findAllWithDependencies(){
         return reporteRepository.findAll().stream().map(ResponseReporteDTO::new).toList();
+    }
+
+    public ResponseReporteDTO updateFeedback(Long id, FeedbackDTO feedbackDTO){
+        Reporte reporte = reporteRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Reporte não encontrado"));
+        feedbackDTO = feedbackService.insert(feedbackDTO);
+        reporte.setFeedback(new Feedback(feedbackDTO));
+        reporte.setStatus("Concluído");
+        reporte = reporteRepository.save(reporte);
+        return new ResponseReporteDTO(reporte);
     }
 
     @Transactional

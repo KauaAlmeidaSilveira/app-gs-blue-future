@@ -1,5 +1,6 @@
 package com.fiap.blueFuture.controllers;
 
+import com.fiap.blueFuture.DTO.FeedbackDTO;
 import com.fiap.blueFuture.DTO.RegisterReporteDTO;
 import com.fiap.blueFuture.DTO.ReporteDTO;
 import com.fiap.blueFuture.DTO.ResponseReporteDTO;
@@ -36,6 +37,11 @@ public class ReporteController {
     @GetMapping(path = "/all")
     public ResponseEntity<List<ResponseReporteDTO>> findAllWithDependencies(){
         return ResponseEntity.ok(reporteService.findAllWithDependencies());
+    }
+
+    @PostMapping(path = "/{id}/feedback")
+    public ResponseEntity<ResponseReporteDTO> insertFeedback(@PathVariable Long id, @Valid @RequestBody FeedbackDTO feedbackDTO){
+        return ResponseEntity.ok(reporteService.updateFeedback(id, feedbackDTO));
     }
 
 }
