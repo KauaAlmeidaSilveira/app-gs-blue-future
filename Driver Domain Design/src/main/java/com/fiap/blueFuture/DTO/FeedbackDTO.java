@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,8 +14,8 @@ import java.time.LocalDate;
 @Setter
 public class FeedbackDTO {
     private Long id;
-    private LocalDate data;
-    private String statusAtualizado;
+    private LocalDateTime data;
+    private String status;
     private String descricao;
     private String responsavel;
     private String img_url;
@@ -23,7 +23,7 @@ public class FeedbackDTO {
     public FeedbackDTO(Feedback feedback){
         this.id = feedback.getId();
         this.data = feedback.getData();
-        this.statusAtualizado = feedback.getStatus();
+        this.status = feedback.getStatus();
         this.descricao = feedback.getDescricao();
         this.responsavel = feedback.getResponsavel();
         this.img_url = feedback.getImg_url();

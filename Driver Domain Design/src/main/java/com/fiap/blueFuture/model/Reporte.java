@@ -7,7 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
@@ -39,8 +38,8 @@ public class Reporte {
     @OneToOne
     private FontePoluicao fontePoluicao;
 
-    @OneToOne
-    private Feedback feedback;
+    @OneToMany(mappedBy = "reporte")
+    private List<Feedback> feedbacks;
 
     public Reporte(ReporteDTO reporteDTO) {
         this.descricao = reporteDTO.getDescricao();
@@ -49,5 +48,14 @@ public class Reporte {
         this.urgencia = reporteDTO.getUrgencia();
         this.status = reporteDTO.getStatus();
         this.img_url = reporteDTO.getImg_url();
+    }
+
+    public void addFeedback(Feedback feedback) {
+        this.feedbacks.add(feedback);
+    }
+
+    public Feedback getMostRecentFeedback() {
+        if (this.feedbacks.isEmpty()) return null;
+        return this.feedbacks.getLast();
     }
 }

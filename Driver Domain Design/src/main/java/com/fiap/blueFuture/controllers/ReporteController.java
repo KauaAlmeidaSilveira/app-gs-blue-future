@@ -41,7 +41,7 @@ public class ReporteController {
 
     @PostMapping(path = "/{id}/feedback")
     public ResponseEntity<ResponseReporteDTO> insertFeedback(@PathVariable Long id, @Valid @RequestBody FeedbackDTO feedbackDTO){
-        return ResponseEntity.ok(reporteService.updateFeedback(id, feedbackDTO));
+        return ResponseEntity.ok(reporteService.addFeedback(feedbackDTO, id));
     }
 
 }
