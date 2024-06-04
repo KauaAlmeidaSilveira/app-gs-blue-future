@@ -16,7 +16,7 @@ import lombok.Setter;
 public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_endereco;
+    private Long id;
     private String endereco;
     private String bairro;
     private String cidade;
@@ -26,7 +26,11 @@ public class Endereco {
     private String lat;
     private String lng;
 
-    public Endereco(EnderecoDTO enderecoDTO){
+    @OneToOne(mappedBy = "endereco")
+    private Reporte reporte;
+
+    public Endereco(EnderecoDTO enderecoDTO) {
+        this.id = enderecoDTO.getId();
         this.endereco = enderecoDTO.getEndereco();
         this.bairro = enderecoDTO.getBairro();
         this.cidade = enderecoDTO.getCidade();

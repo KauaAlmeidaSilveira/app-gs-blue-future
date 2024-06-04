@@ -2,6 +2,7 @@ package com.fiap.blueFuture.services;
 
 import com.fiap.blueFuture.DTO.EnderecoDTO;
 import com.fiap.blueFuture.DTO.GeocodingResponseDTO;
+import com.fiap.blueFuture.exceptions.ResourceNotFoundException;
 import com.fiap.blueFuture.model.Endereco;
 import com.fiap.blueFuture.repositories.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,8 @@ public class EnderecoService {
 
     @Transactional(readOnly = true)
     public EnderecoDTO findById(Long id) {
-        return new EnderecoDTO(enderecoRepository.findById(id).orElseThrow());
+        return new EnderecoDTO(enderecoRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Endereço não encontrado.")));
     }
 
     @Transactional
