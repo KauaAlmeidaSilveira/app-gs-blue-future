@@ -41,7 +41,7 @@ const MapPage = () => {
     fetchLocations();
   }, []);
 
-  const defaultCenter = { lat: 0, lng: 0 }; // Altere para uma localização central padrão, se necessário
+  const defaultCenter = { lat: 0, lng: 0 }; 
 
   return (
     <div>
@@ -49,7 +49,7 @@ const MapPage = () => {
         <GoogleMap
           mapContainerStyle={{ width: '60vw', height: '50vh' }}
           center={defaultCenter}
-          zoom={1}
+          zoom={2}
         >
           {locations.map((location, index) => (
             <Marker
