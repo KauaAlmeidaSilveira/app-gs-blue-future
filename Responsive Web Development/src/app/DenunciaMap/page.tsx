@@ -1,8 +1,8 @@
 'use client'
 
-import MapPage from '@/app/components/MapPage/MapPage';
-import Registros from '@/app/components/Registros/Registros';
-import StateSelect from '@/app/components/StateSelect/StateSelect';
+import MapPage from '@/components/MapPage/MapPage';
+import Registros from '@/components/Registros/Registros';
+import StateSelect from '@/components/StateSelect/StateSelect';
 import React, { useEffect, useState } from 'react';
 
 
