@@ -44,4 +44,15 @@ public class ReporteController {
         return ResponseEntity.ok(reporteService.addFeedback(registerFeedbackDTO.getFeedback(), id, registerFeedbackDTO.getInstituicao()));
     }
 
+    @PatchMapping(path = "/{id}")
+    public ResponseEntity<ReporteDTO> update(@RequestBody ReporteDTO reporteDTO, @PathVariable Long id) {
+        return ResponseEntity.ok(reporteService.update(reporteDTO, id));
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        reporteService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }

@@ -73,4 +73,30 @@ public class ReporteService {
         reporte.setFontePoluicao(new FontePoluicao(fontePoluicao));
         reporte.setEndereco(new Endereco(endereco));
     }
+
+    @Transactional
+    public ReporteDTO update(ReporteDTO reporteDTO, Long id) {
+        Reporte reporte = reporteRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Reporte não encontrado"));
+        updateData(reporteDTO, reporte);
+        reporte = reporteRepository.save(reporte);
+        return new ReporteDTO(reporte);
+    }
+
+    @Transactional
+    public void delete(Long id) {
+        Reporte reporte = reporteRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Reporte não encontrado"));
+        reporteRepository.delete(reporte);
+    }
+
+    private void updateData(ReporteDTO reporteDTO, Reporte reporte) {
+        if (reporteDTO.getDescricao() != null) {
+            reporte.setDescricao(reporteDTO.getDescricao());
+        }
+        if (reporteDTO.getUrgencia() != null) {
+            reporte.setUrgencia(reporteDTO.getUrgencia());
+        }
+        if (reporteDTO.getImg_url() != null) {
+            reporte.setImg_url(reporteDTO.getImg_url());
+        }
+    }
 }
