@@ -1,0 +1,10 @@
+.opcoes_cidade{
+    width: 20rem;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    outline: 0;
+    margin-bottom: 15px;
+    display: block;
+    
+}

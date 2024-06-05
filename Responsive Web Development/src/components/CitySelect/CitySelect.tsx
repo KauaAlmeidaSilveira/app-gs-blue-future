@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import style from './CitySelect.module.css'
 
 interface CityOption {
   value: string;
@@ -31,7 +32,7 @@ const CitySelect = ({ stateId, onCityChanged }: { stateId: string; onCityChanged
   }, [stateId]);
 
   return (
-    <select onChange={(e) => onCityChanged(e.target.value)}>
+    <select className={style.opcoes_cidade} onChange={(e) => onCityChanged(e.target.value)}>
       <option value="">Selecione uma cidade</option>
       {cities.map((city) => (
         <option key={city.value} value={city.value}>

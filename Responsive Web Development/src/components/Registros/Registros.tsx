@@ -3,38 +3,46 @@ import React, { useEffect, useState } from 'react';
 import style from './Registros.module.css';
 import Mapa from '../../components/MapPageReporte/MapPageReporte'
 
-
 interface Usuario {
+  id: number;
   nome: string;
   email: string;
+  telefone: string;
 }
 
 interface FontePoluicao {
+  id: number;
   tipo: string;
   descricao: string;
 }
 
 interface Endereco {
+  id: number;
   endereco: string;
+  bairro: string;
+  cidade: string;
   estado: string;
   cep: string;
-  lat: number; 
+  pais: string;
+  lat: number;
   lng: number;
 }
 
 interface Reporte {
+  id: number;
   descricao: string;
   data: string;
+  hora: string;
   urgencia: string;
   status: string;
-  img_url?: string; 
+  img_url?: string;
 }
 
 interface DadoApi {
   usuario: Usuario;
   fontePoluicao: FontePoluicao;
   endereco: Endereco;
-  feedback: null | string; 
+  feedback: null | string;
   reporte: Reporte;
 }
 
@@ -42,12 +50,12 @@ interface RegistrosProps {
   selectedState: string;
 }
 
-  const Registros = ({ selectedState }: RegistrosProps) => {
+const Registros = ({ selectedState }: RegistrosProps) => {
   const [dadosEspecificos, setDadosEspecificos] = useState<DadoApi[]>([]);
   const [dadosFiltrados, setDadosFiltrados] = useState<DadoApi[]>([]);
-
- 
-
+  const [selectedId, setSelectedId] = useState<number | null>(null);
+  const [selectedLat, setSelectedLat] = useState<number | undefined>(undefined);
+  const [selectedLng, setSelectedLng] = useState<number | undefined>(undefined);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -57,17 +65,20 @@ interface RegistrosProps {
           throw new Error('Erro ao buscar dados');
         }
         const data = await response.json();
-       
+
         const dadosComInformacoesEspecificas = data.map((item: DadoApi) => ({
           usuario: {
+            id: item.usuario.id,
             nome: item.usuario.nome,
             email: item.usuario.email
           },
           fontePoluicao: {
+            id: item.fontePoluicao.id,
             tipo: item.fontePoluicao.tipo,
             descricao: item.fontePoluicao.descricao
           },
           endereco: {
+            id: item.endereco.id,
             endereco: item.endereco.endereco,
             estado: item.endereco.estado,
             cep: item.endereco.cep,
@@ -76,6 +87,7 @@ interface RegistrosProps {
           },
           feedback: item.feedback || '', 
           reporte: {
+            id: item.reporte.id,
             descricao: item.reporte.descricao,
             data: item.reporte.data,
             urgencia: item.reporte.urgencia,
@@ -101,14 +113,17 @@ interface RegistrosProps {
     }
   }, [selectedState, dadosEspecificos]);
 
-  const [selectedLat, setSelectedLat] = useState<number | undefined>(undefined);
-  const [selectedLng, setSelectedLng] = useState<number | undefined>(undefined);
-
-  const handleOpenMap = (lat: number, lng: number) => {
-    setSelectedLat(parseFloat(lat.toString()));
-    setSelectedLng(parseFloat(lng.toString()));
+  const handleOpenMap = (id: number, lat: number, lng: number) => {
+    if (selectedId === id) {
+      setSelectedId(null);
+      setSelectedLat(undefined);
+      setSelectedLng(undefined);
+    } else {
+      setSelectedId(id);
+      setSelectedLat(parseFloat(lat.toString()));
+      setSelectedLng(parseFloat(lng.toString()));
+    }
   };
-  
 
   return (
     <div>
@@ -128,9 +143,9 @@ interface RegistrosProps {
             Urgência: {item.reporte.urgencia}<br />
             Status: {item.reporte.status}<br />
             URL da Imagem: {item.reporte.img_url} <br/>
-            <button onClick={() => handleOpenMap(item.endereco.lat, item.endereco.lng)}>Mapa</button>
-            {selectedLat!== undefined && selectedLng!== undefined && (
-            <Mapa lat={selectedLat} lng={selectedLng}/>
+            <button onClick={() => handleOpenMap(item.reporte.id, item.endereco.lat, item.endereco.lng)}>Mapa</button>
+            {selectedId === item.reporte.id && selectedLat !== undefined && selectedLng !== undefined && (
+              <Mapa lat={selectedLat} lng={selectedLng} />
             )}
           </li>
         ))}

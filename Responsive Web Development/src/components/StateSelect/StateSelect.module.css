@@ -1,0 +1,9 @@
+.opcoes_estado{
+    width: 20rem;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    outline: 0;
+    margin:0 15px 15px 0;
+    display: block;
+}
