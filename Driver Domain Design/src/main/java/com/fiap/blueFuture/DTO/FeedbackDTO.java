@@ -22,14 +22,14 @@ public class FeedbackDTO {
 
     private InstituicaoDTO instituicao;
 
-    public FeedbackDTO(Feedback feedback){
+    public FeedbackDTO(Feedback feedback) {
         this.id = feedback.getId();
         this.data = feedback.getData();
         this.status = feedback.getStatus();
         this.descricao = feedback.getDescricao();
         this.responsavel = feedback.getResponsavel();
         this.img_url = feedback.getImg_url();
-        if(feedback.getInstituicao() != null){
+        if (feedback.getInstituicao() != null) {
             this.instituicao = new InstituicaoDTO(feedback.getInstituicao());
         }
 

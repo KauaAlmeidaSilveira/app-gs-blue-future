@@ -23,7 +23,7 @@ public class ResponseReporteDTO {
     @Valid
     private ReporteDTO reporte;
 
-    public ResponseReporteDTO(Reporte reporte){
+    public ResponseReporteDTO(Reporte reporte) {
         this.usuario = new UsuarioDTO(reporte.getUsuario());
         this.fontePoluicao = new FontePoluicaoDTO(reporte.getFontePoluicao());
         this.endereco = new EnderecoDTO(reporte.getEndereco());

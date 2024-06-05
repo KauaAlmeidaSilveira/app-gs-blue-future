@@ -16,22 +16,17 @@ import java.util.List;
 @Service
 public class ReporteService {
 
+    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
     @Autowired
     private ReporteRepository reporteRepository;
-
     @Autowired
     private UsuarioService usuarioService;
-
     @Autowired
     private FontePoluicaoService fontePoluicaoService;
-
     @Autowired
     private EnderecoService enderecoService;
-
     @Autowired
     private FeedbackService feedbackService;
-
-    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     @Transactional
     public ReporteDTO insert(RegisterReporteDTO reporteDTO) {
@@ -58,6 +53,7 @@ public class ReporteService {
         return reporteRepository.findAll().stream().map(ResponseReporteDTO::new).toList();
     }
 
+    @Transactional
     public ResponseReporteDTO addFeedback(FeedbackDTO feedbackDTO, Long id, InstituicaoDTO instituicaoDTO) {
         Reporte reporte = reporteRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Reporte não encontrado"));
         feedbackDTO = feedbackService.insert(feedbackDTO, reporte, instituicaoDTO);

@@ -26,7 +26,7 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario")
     private List<Reporte> reportes;
 
-    public Usuario(UsuarioDTO usuarioDTO){
+    public Usuario(UsuarioDTO usuarioDTO) {
         this.id = usuarioDTO.getId();
         this.nome = usuarioDTO.getNome();
         this.email = usuarioDTO.getEmail();

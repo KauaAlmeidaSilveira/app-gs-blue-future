@@ -32,7 +32,7 @@ public class Feedback {
     @JoinColumn(name = "id_instituicao")
     private Instituicao instituicao;
 
-    public Feedback(FeedbackDTO feedbackDTO){
+    public Feedback(FeedbackDTO feedbackDTO) {
         this.id = feedbackDTO.getId();
         this.data = feedbackDTO.getData();
         this.status = feedbackDTO.getStatus();
