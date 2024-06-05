@@ -26,9 +26,6 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario")
     private List<Reporte> reportes;
 
-    @OneToMany(mappedBy = "usuario")
-    private List<Feedback> feedbacks;
-
     public Usuario(UsuarioDTO usuarioDTO){
         this.id = usuarioDTO.getId();
         this.nome = usuarioDTO.getNome();

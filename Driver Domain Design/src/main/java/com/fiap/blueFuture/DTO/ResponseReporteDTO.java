@@ -27,9 +27,9 @@ public class ResponseReporteDTO {
         this.usuario = new UsuarioDTO(reporte.getUsuario());
         this.fontePoluicao = new FontePoluicaoDTO(reporte.getFontePoluicao());
         this.endereco = new EnderecoDTO(reporte.getEndereco());
-        if(reporte.getFeedback() != null){
-          this.feedback = new FeedbackDTO(reporte.getFeedback());
-        }
+        this.feedback = reporte.getMostRecentFeedback() == null ? null : new FeedbackDTO(reporte.getMostRecentFeedback());
         this.reporte = new ReporteDTO(reporte);
     }
+
+
 }

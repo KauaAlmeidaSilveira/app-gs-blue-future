@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -17,17 +19,25 @@ public class Feedback {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String feedback;
+    private LocalDateTime data;
+    private String status;
+    private String descricao;
+    private String responsavel;
+    private String img_url;
 
-    @OneToOne
+    @ManyToOne
     private Reporte reporte;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario")
-    private Usuario usuario;
+    @JoinColumn(name = "id_instituicao")
+    private Instituicao instituicao;
 
     public Feedback(FeedbackDTO feedbackDTO){
         this.id = feedbackDTO.getId();
-        this.feedback = feedbackDTO.getFeedback();
+        this.data = feedbackDTO.getData();
+        this.status = feedbackDTO.getStatus();
+        this.descricao = feedbackDTO.getDescricao();
+        this.responsavel = feedbackDTO.getResponsavel();
+        this.img_url = feedbackDTO.getImg_url();
     }
 }
