@@ -9,7 +9,7 @@
     border-radius: 5px;
     border: 1px solid black;
     outline: 0;
-    margin:0 15px 15px 0;
+    margin:10px 15px 15px 0;
     display: block;
 }
 
@@ -25,6 +25,10 @@
     border: 1px solid black;
     padding: 3rem 5rem;
     border-radius:15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .org{

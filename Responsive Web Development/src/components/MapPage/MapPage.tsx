@@ -8,6 +8,7 @@ export interface MapPageProps {}
 interface Location {
   lat: number;
   lng: number;
+  tipo: string;
 }
 
 const MapPage = () => {
@@ -21,15 +22,15 @@ const MapPage = () => {
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const response = await fetch('http://localhost:8080/endereco');
+        const response = await fetch('http://localhost:8080/reporte/all');
         const data = await response.json();
         
-        // Verificação para garantir que lat e lng sejam números válidos
-        const validLocations = data.filter((location: any) =>
-          !isNaN(location.lat) && !isNaN(location.lng)
-        ).map((location: any) => ({
-          lat: parseFloat(location.lat),
-          lng: parseFloat(location.lng)
+        const validLocations = data.filter((item: any) =>
+          !isNaN(parseFloat(item.endereco.lat)) && !isNaN(parseFloat(item.endereco.lng))
+        ).map((item: any) => ({
+          lat: parseFloat(item.endereco.lat),
+          lng: parseFloat(item.endereco.lng),
+          tipo: item.fontePoluicao.tipo,
         }));
 
         setLocations(validLocations);
@@ -55,10 +56,10 @@ const MapPage = () => {
             <Marker
               key={index}
               position={{ lat: location.lat, lng: location.lng }}
-              title="Área poluida"
+              title={location.tipo}
               options={{
                 label: {
-                  text: "Área contaminada",
+                  text: location.tipo,
                   className: "map-marker"
                 }
               }}

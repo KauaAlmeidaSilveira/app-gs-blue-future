@@ -114,16 +114,17 @@ const Form = () => {
         </label>
       </div>
 
-      <div>
-        <label className={style.label} htmlFor="endereco">Endereço:</label>
+      <div className={style.org}>
+        <label className={style.label} htmlFor="endereco">Endereço:
         <input className={style.insert_dados} id="endereco" type="text" value={endereco} onChange={(e) => setEndereco(e.target.value)} />
-      </div>
+        </label>
       
-      <div>
-        <label className={style.label} htmlFor="urgenciaReporte">Urgência do Reporte:</label>
+        <label className={style.label} htmlFor="urgenciaReporte">Urgência do Reporte:
         <input className={style.insert_dados} id="urgenciaReporte" type="text" value={urgenciaReporte} onChange={(e) => setUrgenciaReporte(e.target.value)} />
+        </label>
       </div>
       <div>
+
         <label className={style.label} htmlFor="imgUrl">URL da Imagem:</label>
         <input className={style.insert_dados} id="imgUrl" type="text" value={imgUrl} onChange={(e) => setImgUrl(e.target.value)} />
       </div>
