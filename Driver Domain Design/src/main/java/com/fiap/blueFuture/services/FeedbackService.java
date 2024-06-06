@@ -2,12 +2,10 @@ package com.fiap.blueFuture.services;
 
 import com.fiap.blueFuture.DTO.FeedbackDTO;
 import com.fiap.blueFuture.DTO.InstituicaoDTO;
-import com.fiap.blueFuture.DTO.ReporteDTO;
 import com.fiap.blueFuture.model.Feedback;
 import com.fiap.blueFuture.model.Instituicao;
 import com.fiap.blueFuture.model.Reporte;
 import com.fiap.blueFuture.repositories.FeedbackRepository;
-import com.fiap.blueFuture.repositories.InstituicaoRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

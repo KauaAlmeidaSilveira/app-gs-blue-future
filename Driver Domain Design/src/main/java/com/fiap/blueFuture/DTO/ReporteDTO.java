@@ -7,7 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -27,7 +26,7 @@ public class ReporteDTO {
     @NotBlank(message = "Imagem é obrigatória")
     private String img_url;
 
-    public ReporteDTO(Reporte reporte){
+    public ReporteDTO(Reporte reporte) {
         this.id = reporte.getId();
         this.descricao = reporte.getDescricao();
         this.data = reporte.getData();

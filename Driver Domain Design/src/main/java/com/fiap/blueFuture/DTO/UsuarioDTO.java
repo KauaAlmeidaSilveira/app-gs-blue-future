@@ -22,7 +22,7 @@ public class UsuarioDTO {
     @NotBlank(message = "Telefone é obrigatório")
     private String telefone;
 
-    public UsuarioDTO(Usuario usuario){
+    public UsuarioDTO(Usuario usuario) {
         this.id = usuario.getId();
         this.nome = usuario.getNome();
         this.email = usuario.getEmail();

@@ -5,6 +5,7 @@ import com.fiap.blueFuture.DTO.GeocodingResponseDTO;
 import com.fiap.blueFuture.exceptions.ResourceNotFoundException;
 import com.fiap.blueFuture.model.Endereco;
 import com.fiap.blueFuture.repositories.EnderecoRepository;
+import com.fiap.blueFuture.services.ExternalAPI.GeocodingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

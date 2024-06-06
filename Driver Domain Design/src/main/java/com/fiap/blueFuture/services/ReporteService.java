@@ -16,22 +16,17 @@ import java.util.List;
 @Service
 public class ReporteService {
 
+    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
     @Autowired
     private ReporteRepository reporteRepository;
-
     @Autowired
     private UsuarioService usuarioService;
-
     @Autowired
     private FontePoluicaoService fontePoluicaoService;
-
     @Autowired
     private EnderecoService enderecoService;
-
     @Autowired
     private FeedbackService feedbackService;
-
-    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     @Transactional
     public ReporteDTO insert(RegisterReporteDTO reporteDTO) {
@@ -58,6 +53,7 @@ public class ReporteService {
         return reporteRepository.findAll().stream().map(ResponseReporteDTO::new).toList();
     }
 
+    @Transactional
     public ResponseReporteDTO addFeedback(FeedbackDTO feedbackDTO, Long id, InstituicaoDTO instituicaoDTO) {
         Reporte reporte = reporteRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Reporte não encontrado"));
         feedbackDTO = feedbackService.insert(feedbackDTO, reporte, instituicaoDTO);
@@ -76,5 +72,31 @@ public class ReporteService {
         reporte.setUsuario(new Usuario(usuario));
         reporte.setFontePoluicao(new FontePoluicao(fontePoluicao));
         reporte.setEndereco(new Endereco(endereco));
+    }
+
+    @Transactional
+    public ReporteDTO update(ReporteDTO reporteDTO, Long id) {
+        Reporte reporte = reporteRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Reporte não encontrado"));
+        updateData(reporteDTO, reporte);
+        reporte = reporteRepository.save(reporte);
+        return new ReporteDTO(reporte);
+    }
+
+    @Transactional
+    public void delete(Long id) {
+        Reporte reporte = reporteRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Reporte não encontrado"));
+        reporteRepository.delete(reporte);
+    }
+
+    private void updateData(ReporteDTO reporteDTO, Reporte reporte) {
+        if (reporteDTO.getDescricao() != null) {
+            reporte.setDescricao(reporteDTO.getDescricao());
+        }
+        if (reporteDTO.getUrgencia() != null) {
+            reporte.setUrgencia(reporteDTO.getUrgencia());
+        }
+        if (reporteDTO.getImg_url() != null) {
+            reporte.setImg_url(reporteDTO.getImg_url());
+        }
     }
 }
