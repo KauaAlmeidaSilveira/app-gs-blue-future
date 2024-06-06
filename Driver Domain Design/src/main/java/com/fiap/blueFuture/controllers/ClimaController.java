@@ -3,7 +3,7 @@ package com.fiap.blueFuture.controllers;
 import com.fiap.blueFuture.DTO.ClimaDTO;
 import com.fiap.blueFuture.DTO.ResponseReporteDTO;
 import com.fiap.blueFuture.services.ReporteService;
-import com.fiap.blueFuture.services.ExternalAPI.WeatherMapService;
+import com.fiap.blueFuture.services.WeatherMapService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
