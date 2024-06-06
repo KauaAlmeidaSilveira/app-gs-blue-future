@@ -1,6 +1,9 @@
 .label{
     margin-bottom: 5px;
     display: block;
+    font-weight: 600;
+    font-family: 'Poppins';
+    
 }
 
 .insert_dados{
@@ -11,6 +14,10 @@
     outline: 0;
     margin:10px 15px 15px 0;
     display: block;
+    border: 0;
+    background-color: rgb(18, 18, 43);
+    color: #fff;
+    font-family: 'Poppins';
 }
 
 .areaText{
@@ -19,11 +26,17 @@
     margin:0 15px 15px 0;
     resize: none;
     display: block;
+    background-color: rgb(18, 18, 43);
+    border: 0;
+    border-radius:10px;
+    outline: 0;
+    padding: 10px;
+    color: #fff;
+    font-family: 'Poppins';
 }
 
 .formulario{
-    border: 1px solid black;
-    padding: 3rem 5rem;
+    padding:1rem;
     border-radius:15px;
     display: flex;
     justify-content: center;
@@ -33,4 +46,17 @@
 
 .org{
     display: flex;
+}
+
+.button{
+    padding: 1rem 10rem;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #fff;
+    border: 0;
+    background-color: rgb(18, 18, 43);
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
 }

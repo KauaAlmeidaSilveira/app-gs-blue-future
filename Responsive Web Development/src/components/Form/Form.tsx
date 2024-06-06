@@ -71,6 +71,8 @@ const Form = () => {
     }
   };
 
+ 
+
   return (
     <form className={style.formulario}>
 
@@ -120,7 +122,7 @@ const Form = () => {
         </label>
       
         <label className={style.label} htmlFor="urgenciaReporte">Urgência do Reporte:
-        <input className={style.insert_dados} id="urgenciaReporte" type="text" value={urgenciaReporte} onChange={(e) => setUrgenciaReporte(e.target.value)} />
+        <input className={style.insert_dados} id="urgenciaReporte" type="number" min={1} max={5} value={urgenciaReporte} onChange={(e) => setUrgenciaReporte(e.target.value)} />
         </label>
       </div>
       <div>
@@ -129,7 +131,7 @@ const Form = () => {
         <input className={style.insert_dados} id="imgUrl" type="text" value={imgUrl} onChange={(e) => setImgUrl(e.target.value)} />
       </div>
       <div>
-        <button type="button" onClick={handleSubmit}>Enviar</button>
+        <button className={style.button} type="button" onClick={handleSubmit}>Enviar</button>
       </div>
     </form>
   );

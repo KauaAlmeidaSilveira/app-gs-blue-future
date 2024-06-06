@@ -4,6 +4,7 @@ import style from './Registros.module.css';
 import Mapa from '../../components/MapPageReporte/MapPageReporte';
 import Feedback from '../../components/Feedback/Feedback';
 
+
 interface Usuario {
   id: number;
   nome: string;
@@ -150,7 +151,7 @@ const Registros = ({ selectedState }: RegistrosProps) => {
   };
 
   const handleOpenFeedback = (id: number) => {
-    setShowFeedbackForm(id);
+    setShowFeedbackForm((prevId) => (prevId === id ? null : id));
   };
 
   const handleFeedbackSubmit = async (feedbackData: Omit<FeedbackData, 'id' | 'data'>) => {
