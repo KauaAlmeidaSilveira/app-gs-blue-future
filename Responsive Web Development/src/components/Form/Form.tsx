@@ -121,9 +121,13 @@ const Form = () => {
         <input className={style.insert_dados} id="endereco" type="text" value={endereco} onChange={(e) => setEndereco(e.target.value)} />
         </label>
       
+      <div className={style.tooltip}>
         <label className={style.label} htmlFor="urgenciaReporte">Urgência do Reporte:
+        <span className={style.tooltiptext}>1 - Não urgente, 5 - Muito urgente</span>
         <input className={style.insert_dados} id="urgenciaReporte" type="number" min={1} max={5} value={urgenciaReporte} onChange={(e) => setUrgenciaReporte(e.target.value)} />
         </label>
+        
+      </div>
       </div>
       <div>
 

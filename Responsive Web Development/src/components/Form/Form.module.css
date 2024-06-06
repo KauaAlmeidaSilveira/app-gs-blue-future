@@ -3,20 +3,21 @@
     display: block;
     font-weight: 600;
     font-family: 'Poppins';
+    font-size: 0.9rem;
     
 }
 
 .insert_dados{
     width: 20rem;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid black;
     outline: 0;
     margin:10px 15px 15px 0;
     display: block;
     border: 0;
-    background-color: rgb(18, 18, 43);
-    color: #fff;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
     font-family: 'Poppins';
 }
 
@@ -26,23 +27,26 @@
     margin:0 15px 15px 0;
     resize: none;
     display: block;
-    background-color: rgb(18, 18, 43);
+    background-color: rgb(255, 255, 255);
     border: 0;
-    border-radius:10px;
+    border-radius:15px;
     outline: 0;
     padding: 10px;
-    color: #fff;
+    color: #000000;
     font-family: 'Poppins';
 }
 
 .formulario{
-    padding:1rem;
+    padding: 1rem;
     border-radius:15px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: #ffffff;
 }
+
+
 
 .org{
     display: flex;
@@ -53,10 +57,86 @@
     font-family: 'Poppins';
     font-weight: 600;
     font-size: 1.3rem;
-    color: #fff;
+    color: rgb(18, 18, 43);
     border: 0;
-    background-color: rgb(18, 18, 43);
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
-    margin-top: 20px;
+    margin-top: 30px;
     cursor: pointer;
 }
+
+.button:hover{
+    background-color: rgb(32, 37, 90);
+    color: #fff;
+    transition: 0.5s all linear;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Posiciona o tooltip acima do texto */
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+@media (max-width: 1280px) {
+    .insert_dados{
+        width: 20vw;
+    }
+
+    .areaText{
+        width: 20vw;
+    }
+
+    .button{
+        padding: 10px;
+    }
+
+}
+
+     
+@media (max-width: 900px) {
+    .label{
+        font-size: 0.7rem;
+    }
+
+}
+
+@media (max-width: 800px){
+    .org{
+        display: flex;
+        flex-direction: column;
+    }
+    .insert_dados{
+        width: 40vw;
+    }
+
+    .areaText{
+        width: 40vw;
+    }
+    .label{
+        font-size: 0.5rem;
+    }
+}
+     
