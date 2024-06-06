@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import style from './StateSelect.module.css'
 
 interface StateOption {
   value: string;
@@ -33,7 +34,7 @@ const StateSelect = ({ onStateChanged }: { onStateChanged: (state: string) => vo
   };
 
   return (
-    <select onChange={(e) => handleStateChange(e.target.value)}>
+    <select className={style.opcoes_estado} onChange={(e) => handleStateChange(e.target.value)}>
       <option value="">Selecione um estado</option>
       {states.map((state) => (
         <option key={state.value} value={state.value}>

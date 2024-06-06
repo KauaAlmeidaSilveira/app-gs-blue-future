@@ -4,6 +4,7 @@ import style from './Header.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import menu from '../../assets/menuHeader.png';
+import Logo from '../../assets/logo.png'
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -33,17 +34,17 @@ const Header = () => {
             <header className={style.header}>
                 <div className={style.container}>
                     <div className={style.logo}>
-                        <h2>LOGO</h2>
+                        <Image className={style.img_logo} src={Logo} alt='Logo'/>
                     </div>
 
                     <nav className={style.navegation}>
                         {(windowWidth >= 770 || !menuOpen) && (
                             <div className={style.menu_navegation}>
                                 <ul className={style.ul}>
-                                <li className={style.li}><Link className={style.a} href="/">Home</Link></li>
+                                <li className={style.li}><Link className={style.a} href="/">Inicio</Link></li>
                                 <li className={style.li}><Link className={style.a} href="/Denuncia">Novo Reporte</Link></li>
-                                <li className={style.li}><Link className={style.a} href="/">OPC</Link></li>
-                                <li className={style.li}><Link className={style.a} href="/">OPC</Link></li>
+                                <li className={style.li}><Link className={style.a} href="/DenunciaMap">Reportes</Link></li>
+                                <li className={style.li}><Link className={style.a} href="/">Contato</Link></li>
                                 
                                 </ul>
                             </div>

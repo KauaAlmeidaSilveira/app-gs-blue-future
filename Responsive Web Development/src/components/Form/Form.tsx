@@ -2,10 +2,10 @@
 import React, { useState } from 'react';
 import StateSelect from '../StateSelect/StateSelect';
 import CitySelect from '../CitySelect/CitySelect';
+import style from './Form.module.css'
 
-// Componente Form
+
 const Form = () => {
-  // Estados para controlar os valores selecionados
   const [selectedState, setSelectedState] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
   const [nome, setNome] = useState('');
@@ -18,7 +18,6 @@ const Form = () => {
   const [urgenciaReporte, setUrgenciaReporte] = useState('');
   const [imgUrl, setImgUrl] = useState('');
 
-  // Funções para atualizar os estados quando houver mudanças nos campos
   const handleStateChange = (stateId: string) => {
     setSelectedState(stateId);
   };
@@ -30,7 +29,6 @@ const Form = () => {
   const handleSubmit = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
 
-    // Construção do objeto de dados a ser enviado
     const dataToSend = {
       usuario: {
         nome,
@@ -73,54 +71,71 @@ const Form = () => {
     }
   };
 
+ 
+
   return (
-    <form>
-      <div>
-        <label htmlFor="nome">Nome:</label>
-        <input id="nome" type="text" value={nome} onChange={(e) => setNome(e.target.value)} />
+    <form className={style.formulario}>
+
+      <div className={style.org}>
+        <label className={style.label} htmlFor="nome">Nome:
+        <input className={style.insert_dados} id="nome" type="text" value={nome} onChange={(e) => setNome(e.target.value)} />
+        </label>
+      
+        <label className={style.label} htmlFor="email">Email:
+        <input className={style.insert_dados} id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        </label>
       </div>
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+
+      <div className={style.org}>
+        <label className={style.label} htmlFor="telefone">Telefone:
+        <input className={style.insert_dados} id="telefone" type="text" value={telefone} onChange={(e) => setTelefone(e.target.value)} />
+        </label>
+
+        <label className={style.label} htmlFor="tipoFontePoluicao">Tipo de Fonte de Poluição:
+        <input className={style.insert_dados} id="tipoFontePoluicao" type="text" value={tipoFontePoluicao} onChange={(e) => setTipoFontePoluicao(e.target.value)} />
+        </label>
       </div>
-      <div>
-        <label htmlFor="telefone">Telefone:</label>
-        <input id="telefone" type="text" value={telefone} onChange={(e) => setTelefone(e.target.value)} />
+
+      <div className={style.org}>
+        <label className={style.label} htmlFor="descricaoFontePoluicao">Descrição da Fonte de Poluição:
+        <textarea className={style.areaText} id="descricaoFontePoluicao" value={descricaoFontePoluicao} onChange={(e) => setDescricaoFontePoluicao(e.target.value)} />
+        </label>
+        
+        <label className={style.label} htmlFor="descricaoReporte">Descrição do Reporte:
+        <textarea className={style.areaText} id="descricaoReporte" value={descricaoReporte} onChange={(e) => setDescricaoReporte(e.target.value)} />
+        </label>
       </div>
-      <div>
-        <label htmlFor="tipoFontePoluicao">Tipo de Fonte de Poluição:</label>
-        <input id="tipoFontePoluicao" type="text" value={tipoFontePoluicao} onChange={(e) => setTipoFontePoluicao(e.target.value)} />
-      </div>
-      <div>
-        <label htmlFor="descricaoFontePoluicao">Descrição da Fonte de Poluição:</label>
-        <textarea id="descricaoFontePoluicao" value={descricaoFontePoluicao} onChange={(e) => setDescricaoFontePoluicao(e.target.value)} />
-      </div>
-      <div>
-        <label htmlFor="estado">Estado:</label>
+
+      <div className={style.org}>
+        <label className={style.label} htmlFor="estado">Estado:
         <StateSelect onStateChanged={handleStateChange} />
-      </div>
-      <div>
-        <label htmlFor="cidade">Cidade:</label>
+        </label>
+      
+        <label className={style.label} htmlFor="cidade">Cidade:
         <CitySelect stateId={selectedState} onCityChanged={handleCityChange} />
+        </label>
+      </div>
+
+      <div className={style.org}>
+        <label className={style.label} htmlFor="endereco">Endereço:
+        <input className={style.insert_dados} id="endereco" type="text" value={endereco} onChange={(e) => setEndereco(e.target.value)} />
+        </label>
+      
+      <div className={style.tooltip}>
+        <label className={style.label} htmlFor="urgenciaReporte">Urgência do Reporte:
+        <span className={style.tooltiptext}>1 - Não urgente, 5 - Muito urgente</span>
+        <input className={style.insert_dados} id="urgenciaReporte" type="number" min={1} max={5} value={urgenciaReporte} onChange={(e) => setUrgenciaReporte(e.target.value)} />
+        </label>
+        
+      </div>
       </div>
       <div>
-        <label htmlFor="endereco">Endereço:</label>
-        <input id="endereco" type="text" value={endereco} onChange={(e) => setEndereco(e.target.value)} />
+
+        <label className={style.label} htmlFor="imgUrl">URL da Imagem:</label>
+        <input className={style.insert_dados} id="imgUrl" type="text" value={imgUrl} onChange={(e) => setImgUrl(e.target.value)} />
       </div>
       <div>
-        <label htmlFor="descricaoReporte">Descrição do Reporte:</label>
-        <textarea id="descricaoReporte" value={descricaoReporte} onChange={(e) => setDescricaoReporte(e.target.value)} />
-      </div>
-      <div>
-        <label htmlFor="urgenciaReporte">Urgência do Reporte:</label>
-        <input id="urgenciaReporte" type="text" value={urgenciaReporte} onChange={(e) => setUrgenciaReporte(e.target.value)} />
-      </div>
-      <div>
-        <label htmlFor="imgUrl">URL da Imagem:</label>
-        <input id="imgUrl" type="text" value={imgUrl} onChange={(e) => setImgUrl(e.target.value)} />
-      </div>
-      <div>
-        <button type="button" onClick={handleSubmit}>Enviar</button>
+        <button className={style.button} type="button" onClick={handleSubmit}>Enviar</button>
       </div>
     </form>
   );

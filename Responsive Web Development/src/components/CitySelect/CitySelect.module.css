@@ -1,0 +1,25 @@
+.opcoes_cidade{
+    width: 20rem;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    outline: 0;
+    margin-bottom: 15px;
+    display: block;
+    background-color: rgb(18, 18, 43);
+    font-family: 'Poppins';
+    font-weight: 600;
+    color: #fff;
+}
+
+@media (max-width: 1280px) {
+    .opcoes_cidade{
+        width: 20vw;
+    }
+}
+
+@media (max-width: 800px){
+    .opcoes_cidade{
+        width: 30vw;
+    }
+}
