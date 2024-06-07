@@ -182,7 +182,7 @@ const Registros = ({ selectedState }: RegistrosProps) => {
 
       alert('Feedback enviado com sucesso!');
       setShowFeedbackForm(null);
-      window.location.reload(); // Recarrega a página
+      window.location.reload(); 
     } catch (error) {
       console.error('Erro ao enviar feedback:', error);
       alert('Erro ao enviar feedback');
@@ -194,20 +194,22 @@ const Registros = ({ selectedState }: RegistrosProps) => {
       <ul className={style.listUl}>
         {dadosFiltrados.map((item, index) => (
           <li className={style.listLi} key={index}>
-            <div className={style.title_reporte}>
-              <h1>Dados do reporte</h1>
-            </div>
             <div className={style.container_reporte}>
               <div className={style.box_info_reporte}>
-                <p className={style.dados_reporte}><span className={style.span_dados}>Nome:</span> {item.usuario.nome}</p>
-                <p className={style.dados_reporte}><span className={style.span_dados}>Email:</span> {item.usuario.email}</p>
-                <p className={style.dados_reporte}><span className={style.span_dados}>Tipo de Poluição:</span> {item.fontePoluicao.tipo}</p>
-                <p className={style.dados_reporte}><span className={style.span_dados}>Descrição da Fonte de Poluição:</span> {item.fontePoluicao.descricao}</p>
-                <p className={style.dados_reporte}><span className={style.span_dados}>Endereço:</span> {item.endereco.endereco}</p>
-                <p className={style.dados_reporte}><span className={style.span_dados}>Descrição do Relatório:</span> {item.reporte.descricao}</p>
-                <p className={style.dados_reporte}><span className={style.span_dados}>Data do Relatório:</span> {item.reporte.data}</p>
-                <p className={style.dados_reporte}><span className={style.span_dados}>Urgência:</span> {item.reporte.urgencia}</p>
-                <p className={style.dados_reporte}><span className={style.span_dados}>Status:</span> {item.reporte.status}</p>
+
+              <div className={style.title_reporte}>
+                  <h1>Dados do reporte</h1>
+              </div>
+
+                <p className={style.dados_reporte}><span className={style.span_dados}>Nome: </span>{item.usuario.nome}</p>
+                <p className={style.dados_reporte}><span className={style.span_dados}>Email: </span>{item.usuario.email}</p>
+                <p className={style.dados_reporte}><span className={style.span_dados}>Tipo de Poluição: </span>{item.fontePoluicao.tipo}</p>
+                <p className={style.dados_reporte}><span className={style.span_dados}>Descrição da Fonte de Poluição: </span>{item.fontePoluicao.descricao}</p>
+                <p className={style.dados_reporte}><span className={style.span_dados}>Endereço: </span>{item.endereco.endereco}</p>
+                <p className={style.dados_reporte}><span className={style.span_dados}>Descrição do Relatório: </span>{item.reporte.descricao}</p>
+                <p className={style.dados_reporte}><span className={style.span_dados}>Data do Relatório: </span>{item.reporte.data}</p>
+                <p className={style.dados_reporte}><span className={style.span_dados}>Nível urgência: </span>{item.reporte.urgencia}</p>
+                <p className={style.dados_reporte}><span className={style.span_dados}>Status: </span>{item.reporte.status}</p>
               </div>
               <div className={style.box_info_image}>
                 <p>URL da Imagem: {item.reporte.img_url}</p>
@@ -216,23 +218,37 @@ const Registros = ({ selectedState }: RegistrosProps) => {
             
             {item.feedback && (
               <div>
-                <h4>Feedback</h4>
-                Status: {item.feedback.status}
-                Descrição: {item.feedback.descricao}
-                Responsável: {item.feedback.responsavel}
-                URL da Imagem: {item.feedback.img_url}
-                {item.feedback.instituicao && (
-                  <>
-                    <h5>Instituição</h5>
-                    Nome: {item.feedback.instituicao.nome}
-                    Email: {item.feedback.instituicao.email}
-                    Telefone: {item.feedback.instituicao.telefone}
-                  </>
-                )}
+                <div className={style.container_reporte}>
+                    <div className={style.box_info_reporte}>
+
+                        <div className={style.title_reporte}>
+                            <h1>Feedback</h1>
+                        </div>
+
+                        <p className={style.dados_reporte}><span className={style.span_dados}>Status: </span> {item.feedback.status}</p>
+                        <p className={style.dados_reporte}><span className={style.span_dados}>Descrição: </span>{item.feedback.descricao}</p>
+                        <p className={style.dados_reporte}><span className={style.span_dados}>Responsável: </span>{item.feedback.responsavel}</p>
+                        {item.feedback.instituicao && (
+                        <div className={style.box_info_reporte}>
+                            <div className={style.title_reporte_space}>
+                                <h1>Organização</h1>
+                            </div>
+                            <p className={style.dados_reporte}><span className={style.span_dados}>Nome: </span>{item.feedback.instituicao.nome}</p>
+                            <p className={style.dados_reporte}><span className={style.span_dados}>Email: </span>{item.feedback.instituicao.email}</p>
+                            <p className={style.dados_reporte}><span className={style.span_dados}>Telefone: </span>{item.feedback.instituicao.telefone}</p>
+                        </div>
+                      )}
+                    </div>
+                <div className={style.box_info_image}>
+                      <p>URL da Imagem: {item.feedback.img_url}</p>
+                </div>
+              </div>
+                
+
               </div>
               )}
               <div className={style.buttons_box}>
-                <button className={style.button_reporte} onClick={() => handleOpenMap(item.reporte.id, item.endereco.lat, item.endereco.lng)}>Mapa</button>
+                  <button className={style.button_reporte} onClick={() => handleOpenMap(item.reporte.id, item.endereco.lat, item.endereco.lng)}>Mapa</button>
                 {selectedId === item.reporte.id && selectedLat !== undefined && selectedLng !== undefined && (
                   <Mapa lat={selectedLat} lng={selectedLng} />
                 )}

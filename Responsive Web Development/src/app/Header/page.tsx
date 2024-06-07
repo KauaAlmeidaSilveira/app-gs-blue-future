@@ -44,7 +44,7 @@ const Header = () => {
                                 <li className={style.li}><Link className={style.a} href="/">Inicio</Link></li>
                                 <li className={style.li}><Link className={style.a} href="/Denuncia">Novo Reporte</Link></li>
                                 <li className={style.li}><Link className={style.a} href="/DenunciaMap">Reportes</Link></li>
-                                <li className={style.li}><Link className={style.a} href="/">Contato</Link></li>
+                                <li className={style.li}><Link className={style.a} href="/Contato">Contato</Link></li>
                                 
                                 </ul>
                             </div>
@@ -54,14 +54,14 @@ const Header = () => {
                     <div className={style.menu_icon} onClick={toggleMenu}>
                         <Image className={style.menuHeader} src={menu} alt='menu' />
                     
-                    {menuOpen && windowWidth < 770 && (
+                    {menuOpen && windowWidth < 950 && (
                         <div className={style.menu_content}>
                             <ul className={style.ul}>
-                                <li className={style.li}><Link className={style.a} href="/">Home</Link></li>
-                                <li className={style.li}><Link className={style.a} href="/Denuncia">OPC</Link></li>
-                                <li className={style.li}><Link className={style.a} href="/">OPC</Link></li>
-                                <li className={style.li}><Link className={style.a} href="/">OPC</Link></li>
-                                <li className={style.li}><Link className={style.a} href="/">OPC</Link></li>
+                                <li className={style.li}><Link className={style.a} href="/">Inicio</Link></li>
+                                <li className={style.li}><Link className={style.a} href="/Denuncia">Novo Reporte</Link></li>
+                                <li className={style.li}><Link className={style.a} href="/DenunciaMap">Reportes</Link></li>
+                                <li className={style.li}><Link className={style.a} href="/">Contato</Link></li>
+                               
                                 
                             </ul>
                         </div>
