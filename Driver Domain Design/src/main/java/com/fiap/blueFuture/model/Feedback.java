@@ -25,11 +25,10 @@ public class Feedback {
     private String responsavel;
     private String img_url;
 
-    @ManyToOne
+    @OneToOne
     private Reporte reporte;
 
-    @ManyToOne
-    @JoinColumn(name = "id_instituicao")
+    @OneToOne
     private Instituicao instituicao;
 
     public Feedback(FeedbackDTO feedbackDTO) {

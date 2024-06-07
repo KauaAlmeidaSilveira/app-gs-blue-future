@@ -23,8 +23,8 @@ public class Instituicao {
     private String email;
     private String telefone;
 
-    @OneToMany(mappedBy = "instituicao")
-    private List<Feedback> feedbacks;
+    @OneToOne(mappedBy = "instituicao")
+    private Feedback feedback;
 
     public Instituicao(InstituicaoDTO instituicaoDTO) {
         this.id = instituicaoDTO.getId();

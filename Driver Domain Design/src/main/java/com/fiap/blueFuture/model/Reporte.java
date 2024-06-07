@@ -38,8 +38,8 @@ public class Reporte {
     @OneToOne
     private FontePoluicao fontePoluicao;
 
-    @OneToMany(mappedBy = "reporte")
-    private List<Feedback> feedbacks;
+    @OneToOne(mappedBy = "reporte")
+    private Feedback feedback;
 
     public Reporte(ReporteDTO reporteDTO) {
         this.descricao = reporteDTO.getDescricao();
@@ -48,14 +48,5 @@ public class Reporte {
         this.urgencia = reporteDTO.getUrgencia();
         this.status = reporteDTO.getStatus();
         this.img_url = reporteDTO.getImg_url();
-    }
-
-    public void addFeedback(Feedback feedback) {
-        this.feedbacks.add(feedback);
-    }
-
-    public Feedback getMostRecentFeedback() {
-        if (this.feedbacks.isEmpty()) return null;
-        return this.feedbacks.getLast();
     }
 }

@@ -33,7 +33,7 @@ public class WeatherMapService {
 
             climaDTO.setClima(weather.get("main").getAsString());
             climaDTO.setDescricao(weather.get("description").getAsString());
-            climaDTO.setTemperatura(main.get("temp").getAsDouble());
+            climaDTO.setTemperatura(main.get("temp").getAsDouble() - 273.15);
             climaDTO.setPressao(main.get("pressure").getAsInt());
             climaDTO.setUmidade(main.get("humidity").getAsInt());
         }

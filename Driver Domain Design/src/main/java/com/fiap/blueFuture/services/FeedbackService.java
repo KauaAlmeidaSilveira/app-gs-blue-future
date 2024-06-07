@@ -2,6 +2,7 @@ package com.fiap.blueFuture.services;
 
 import com.fiap.blueFuture.DTO.FeedbackDTO;
 import com.fiap.blueFuture.DTO.InstituicaoDTO;
+import com.fiap.blueFuture.exceptions.ResourceNotFoundException;
 import com.fiap.blueFuture.model.Feedback;
 import com.fiap.blueFuture.model.Instituicao;
 import com.fiap.blueFuture.model.Reporte;
@@ -10,6 +11,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Service
@@ -33,7 +35,26 @@ public class FeedbackService {
             instituicaoDTO = instituicaoService.insert(instituicaoDTO);
         }
 
-        feedback.setInstituicao(new Instituicao(instituicaoDTO));
+        Instituicao instituicao = new Instituicao(instituicaoDTO);
+
+        feedback.setInstituicao(instituicao);
+        feedback = feedbackRepository.save(feedback);
+        return new FeedbackDTO(feedback);
+    }
+
+    @Transactional
+    public void delete(Long id) {
+        feedbackRepository.deleteById(id);
+    }
+
+    @Transactional
+    public FeedbackDTO update(FeedbackDTO feedbackDTO, Long id) {
+        Feedback feedback = feedbackRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Feedback não encontrado"));
+        feedback.setData(LocalDateTime.now());
+        feedback.setStatus(feedbackDTO.getStatus());
+        feedback.setDescricao(feedbackDTO.getDescricao());
+        feedback.setResponsavel(feedbackDTO.getResponsavel());
+        feedback.setImg_url(feedbackDTO.getImg_url());
         feedback = feedbackRepository.save(feedback);
         return new FeedbackDTO(feedback);
     }

@@ -56,9 +56,14 @@ public class ReporteService {
     @Transactional
     public ResponseReporteDTO addFeedback(FeedbackDTO feedbackDTO, Long id, InstituicaoDTO instituicaoDTO) {
         Reporte reporte = reporteRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Reporte não encontrado"));
-        feedbackDTO = feedbackService.insert(feedbackDTO, reporte, instituicaoDTO);
-        reporte.addFeedback(new Feedback(feedbackDTO));
-        reporte.setStatus(feedbackDTO.getStatus());
+        if (reporte.getFeedback() != null) {
+            feedbackService.update(feedbackDTO, reporte.getFeedback().getId());
+        }else {
+            feedbackDTO = feedbackService.insert(feedbackDTO, reporte, instituicaoDTO);
+            reporte.setFeedback(new Feedback(feedbackDTO));
+            reporte.setStatus(feedbackDTO.getStatus());
+        }
+
         reporte = reporteRepository.save(reporte);
         return new ResponseReporteDTO(reporte);
     }
@@ -85,8 +90,10 @@ public class ReporteService {
     @Transactional
     public void delete(Long id) {
         Reporte reporte = reporteRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Reporte não encontrado"));
+        feedbackService.delete(reporte.getFeedback().getId());
         reporteRepository.delete(reporte);
     }
+
 
     private void updateData(ReporteDTO reporteDTO, Reporte reporte) {
         if (reporteDTO.getDescricao() != null) {
