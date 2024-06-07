@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react';
+import style from './Feedback.module.css'
 
 interface FeedbackFormProps {
   onSubmit: (feedbackData: any) => void;
@@ -33,11 +34,11 @@ const Feedback: React.FC<FeedbackFormProps> = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      {/* Campos de Feedback */}
-      <label>
+    <form className={style.form_box} onSubmit={handleSubmit}>
+      
+      <label className={style.label}>
         Status:
-        <select value={status} onChange={(e) => setStatus(e.target.value)} required>
+        <select className={style.input_dados} value={status} onChange={(e) => setStatus(e.target.value)} required>
           <option value="">Selecione o Status</option>
           <option value="Pendente">Pendente</option>
           <option value="Em Análise">Em Análise</option>
@@ -48,31 +49,35 @@ const Feedback: React.FC<FeedbackFormProps> = ({ onSubmit }) => {
           <option value="Inválido">Inválido</option>
         </select>
       </label>
-      <label>
+
+      <label className={style.label}>
         Descrição:
-        <textarea value={descricao} onChange={(e) => setDescricao(e.target.value)} required></textarea>
-      </label>
-      <label>
-        Responsável:
-        <input type="text" value={responsavel} onChange={(e) => setResponsavel(e.target.value)} required />
-      </label>
-      <label>
-        URL da Imagem:
-        <input type="text" value={imgUrl} onChange={(e) => setImgUrl(e.target.value)} />
+        <textarea className={style.input_dados} value={descricao} onChange={(e) => setDescricao(e.target.value)} required></textarea>
       </label>
 
-      {/* Campos da Instituição */}
-      <label>
+      <label className={style.label}>
+        Responsável:
+        <input className={style.input_dados} type="text" value={responsavel} onChange={(e) => setResponsavel(e.target.value)} required />
+      </label>
+
+      <label className={style.label}>
+        URL da Imagem:
+        <input className={style.input_dados} type="text" value={imgUrl} onChange={(e) => setImgUrl(e.target.value)} />
+      </label>
+
+      <label className={style.label}>
         Nome da Instituição:
-        <input type="text" value={nomeInstituicao} onChange={(e) => setNomeInstituicao(e.target.value)} required />
+        <input className={style.input_dados} type="text" value={nomeInstituicao} onChange={(e) => setNomeInstituicao(e.target.value)} required />
       </label>
-      <label>
+
+      <label className={style.label}>
         Email da Instituição:
-        <input type="text" value={emailInstituicao} onChange={(e) => setEmailInstituicao(e.target.value)} required />
+        <input className={style.input_dados} type="text" value={emailInstituicao} onChange={(e) => setEmailInstituicao(e.target.value)} required />
       </label>
-      <label>
+
+      <label className={style.label}>
         Telefone da Instituição:
-        <input type="text" value={telefoneInstituicao} onChange={(e) => setTelefoneInstituicao(e.target.value)} required />
+        <input className={style.input_dados} type="text" value={telefoneInstituicao} onChange={(e) => setTelefoneInstituicao(e.target.value)} required />
       </label>
 
       <button type="submit">Enviar Feedback</button>

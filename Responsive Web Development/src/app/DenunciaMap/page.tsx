@@ -4,6 +4,7 @@ import MapPage from '@/components/MapPage/MapPage';
 import Registros from '@/components/Registros/Registros';
 import StateSelect from '@/components/StateSelect/StateSelect';
 import React, { useEffect, useState } from 'react';
+import style from './DenunciaMap.module.css'
 
 
 const DenunciaMap = () => {
@@ -15,11 +16,18 @@ const DenunciaMap = () => {
   };
   
   return (
-    <div>
-      <StateSelect onStateChanged={handleStateChange} />
-      <Registros selectedState={selectedState} />
-      <MapPage/>
-    </div>
+    <section className={style.box}>
+      <div className={style.container}>
+        <div className={style.title_reportes}>
+          <h1>Reportes</h1>
+        </div>
+        <div className={style.box_state}>
+          <StateSelect onStateChanged={handleStateChange} />
+        </div>
+        <Registros selectedState={selectedState} />
+        <MapPage/>
+      </div>
+    </section>
   );
 };
 

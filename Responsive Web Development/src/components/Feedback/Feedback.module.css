@@ -1,0 +1,26 @@
+.form_box{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.input_dados{
+    display: block;
+    border: 0;
+    padding: 6px;
+    width: 20vw;
+    outline: 0;
+    margin: 5px 0 20px 0;
+    font-family: 'Poppins';
+    border-radius: 10px;
+}
+
+.label{
+    display: block;
+    font-family: 'Poppins';
+    font-weight: 600;
+    color: #fff;
+}

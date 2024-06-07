@@ -20,9 +20,9 @@ const MapPageReporte: React.FC<RegistroMapProps> = ({ lat, lng }) => {
     <div>
       {isLoaded? (
         <GoogleMap
-          mapContainerStyle={{ width: '60vw', height: '50vh' }} 
+          mapContainerStyle={{ width: '70vw', height: '50vh' }} 
           center={defaultCenter}
-          zoom={2}
+          zoom={7}
         >
           <Marker
             position={{ lat, lng }}

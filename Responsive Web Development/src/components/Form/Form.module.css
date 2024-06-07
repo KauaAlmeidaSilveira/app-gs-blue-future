@@ -68,7 +68,7 @@
 .button:hover{
     background-color: rgb(32, 37, 90);
     color: #fff;
-    transition: 0.5s all linear;
+    transition: 0.3s all linear;
 }
 
 .tooltip {
@@ -80,15 +80,15 @@
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 120px;
-  background-color: black;
+  background-color: rgb(143, 3, 3);
   color: #fff;
   text-align: center;
   border-radius: 6px;
-  padding: 5px 0;
+  padding: 15px 0px;
   position: absolute;
   z-index: 1;
-  bottom: 125%; /* Posiciona o tooltip acima do texto */
-  left: 50%;
+  bottom: 70%; 
+  left: 70%;
   margin-left: -60px;
   opacity: 0;
   transition: opacity 0.3s;

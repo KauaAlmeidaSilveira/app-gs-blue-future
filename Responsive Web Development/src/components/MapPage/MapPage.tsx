@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import style from './MapPage.module.css'
 
 export interface MapPageProps {}
 
@@ -45,10 +46,10 @@ const MapPage = () => {
   const defaultCenter = { lat: 0, lng: 0 }; 
 
   return (
-    <div>
+    <div className={style.box_map}>
       {isLoaded ? (
         <GoogleMap
-          mapContainerStyle={{ width: '60vw', height: '50vh' }}
+          mapContainerStyle={{ width: '80vw', height: '50vh' }}
           center={defaultCenter}
           zoom={2}
         >

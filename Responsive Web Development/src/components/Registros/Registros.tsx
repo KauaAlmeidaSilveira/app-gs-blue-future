@@ -191,51 +191,57 @@ const Registros = ({ selectedState }: RegistrosProps) => {
 
   return (
     <div>
-      <h2>Dados Específicos Recebidos</h2>
-      <ul>
+      <ul className={style.listUl}>
         {dadosFiltrados.map((item, index) => (
-          <li className={style.list} key={index}>
-            Nome: {item.usuario.nome}<br />
-            Email: {item.usuario.email}<br />
-            Tipo de Poluição: {item.fontePoluicao.tipo}<br />
-            Descrição da Fonte de Poluição: {item.fontePoluicao.descricao}<br />
-            Endereço: {item.endereco.endereco}<br />
-            Bairro: {item.endereco.bairro}<br />
-            Cidade: {item.endereco.cidade}<br />
-            Estado: {item.endereco.estado}<br />
-            CEP: {item.endereco.cep}<br />
-            País: {item.endereco.pais}<br />
-            Descrição do Relatório: {item.reporte.descricao}<br />
-            Data do Relatório: {item.reporte.data}<br />
-            Hora do Relatório: {item.reporte.hora}<br />
-            Urgência: {item.reporte.urgencia}<br />
-            Status: {item.reporte.status}<br />
-            URL da Imagem: {item.reporte.img_url}<br />
+          <li className={style.listLi} key={index}>
+            <div className={style.title_reporte}>
+              <h1>Dados do reporte</h1>
+            </div>
+            <div className={style.container_reporte}>
+              <div className={style.box_info_reporte}>
+                <p className={style.dados_reporte}><span className={style.span_dados}>Nome:</span> {item.usuario.nome}</p>
+                <p className={style.dados_reporte}><span className={style.span_dados}>Email:</span> {item.usuario.email}</p>
+                <p className={style.dados_reporte}><span className={style.span_dados}>Tipo de Poluição:</span> {item.fontePoluicao.tipo}</p>
+                <p className={style.dados_reporte}><span className={style.span_dados}>Descrição da Fonte de Poluição:</span> {item.fontePoluicao.descricao}</p>
+                <p className={style.dados_reporte}><span className={style.span_dados}>Endereço:</span> {item.endereco.endereco}</p>
+                <p className={style.dados_reporte}><span className={style.span_dados}>Descrição do Relatório:</span> {item.reporte.descricao}</p>
+                <p className={style.dados_reporte}><span className={style.span_dados}>Data do Relatório:</span> {item.reporte.data}</p>
+                <p className={style.dados_reporte}><span className={style.span_dados}>Urgência:</span> {item.reporte.urgencia}</p>
+                <p className={style.dados_reporte}><span className={style.span_dados}>Status:</span> {item.reporte.status}</p>
+              </div>
+              <div className={style.box_info_image}>
+                <p>URL da Imagem: {item.reporte.img_url}</p>
+              </div>
+            </div>
+            
             {item.feedback && (
               <div>
                 <h4>Feedback</h4>
-                Status: {item.feedback.status}<br />
-                Descrição: {item.feedback.descricao}<br />
-                Responsável: {item.feedback.responsavel}<br />
-                URL da Imagem: {item.feedback.img_url}<br />
+                Status: {item.feedback.status}
+                Descrição: {item.feedback.descricao}
+                Responsável: {item.feedback.responsavel}
+                URL da Imagem: {item.feedback.img_url}
                 {item.feedback.instituicao && (
                   <>
                     <h5>Instituição</h5>
-                    Nome: {item.feedback.instituicao.nome}<br />
-                    Email: {item.feedback.instituicao.email}<br />
-                    Telefone: {item.feedback.instituicao.telefone}<br />
+                    Nome: {item.feedback.instituicao.nome}
+                    Email: {item.feedback.instituicao.email}
+                    Telefone: {item.feedback.instituicao.telefone}
                   </>
                 )}
               </div>
-            )}
-            <button onClick={() => handleOpenMap(item.reporte.id, item.endereco.lat, item.endereco.lng)}>Mapa</button>
-            {selectedId === item.reporte.id && selectedLat !== undefined && selectedLng !== undefined && (
-              <Mapa lat={selectedLat} lng={selectedLng} />
-            )}
-            <button onClick={() => handleOpenFeedback(item.reporte.id)}>Feedback</button>
-            {showFeedbackForm === item.reporte.id && (
-              <Feedback onSubmit={handleFeedbackSubmit} />
-            )}
+              )}
+              <div className={style.buttons_box}>
+                <button className={style.button_reporte} onClick={() => handleOpenMap(item.reporte.id, item.endereco.lat, item.endereco.lng)}>Mapa</button>
+                {selectedId === item.reporte.id && selectedLat !== undefined && selectedLng !== undefined && (
+                  <Mapa lat={selectedLat} lng={selectedLng} />
+                )}
+                <button className={style.button_reporte} onClick={() => handleOpenFeedback(item.reporte.id)}>Feedback</button>
+                {showFeedbackForm === item.reporte.id && (
+                  <Feedback onSubmit={handleFeedbackSubmit} />
+                )}
+              </div>
+
           </li>
         ))}
       </ul>
