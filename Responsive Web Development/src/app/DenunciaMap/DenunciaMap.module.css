@@ -1,0 +1,27 @@
+.box{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(18, 18, 43);
+    
+}
+
+.container{
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box_state{
+    width: 100%;
+}
+
+.title_reportes{
+    margin: 50px 0px;
+    color: #fff;
+}
