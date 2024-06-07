@@ -74,3 +74,22 @@
         margin: 15px 0 0 10px;
     }
   }
+
+
+  @media (max-height: 700px) and (min-height:500px) {
+    .container_contato{
+        height: 30rem;
+    }
+    .bg{
+        height: 30rem;
+    }
+
+    .img_icon{
+        width: 40px;
+        height: 40px;
+    }
+    .icon_social p{
+        font-size: 1rem;
+        margin: 8px 0 0 8px;
+    }
+}

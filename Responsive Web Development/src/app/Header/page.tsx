@@ -41,7 +41,7 @@ const Header = () => {
                         {(windowWidth >= 770 || !menuOpen) && (
                             <div className={style.menu_navegation}>
                                 <ul className={style.ul}>
-                                <li className={style.li}><Link className={style.a} href="/">Inicio</Link></li>
+                                <li className={style.li}><Link className={style.a} href="/Inicial">Inicio</Link></li>
                                 <li className={style.li}><Link className={style.a} href="/Denuncia">Novo Reporte</Link></li>
                                 <li className={style.li}><Link className={style.a} href="/DenunciaMap">Reportes</Link></li>
                                 <li className={style.li}><Link className={style.a} href="/Contato">Contato</Link></li>
@@ -57,10 +57,10 @@ const Header = () => {
                     {menuOpen && windowWidth < 950 && (
                         <div className={style.menu_content}>
                             <ul className={style.ul}>
-                                <li className={style.li}><Link className={style.a} href="/">Inicio</Link></li>
+                                <li className={style.li}><Link className={style.a} href="/Inicial">Inicio</Link></li>
                                 <li className={style.li}><Link className={style.a} href="/Denuncia">Novo Reporte</Link></li>
                                 <li className={style.li}><Link className={style.a} href="/DenunciaMap">Reportes</Link></li>
-                                <li className={style.li}><Link className={style.a} href="/">Contato</Link></li>
+                                <li className={style.li}><Link className={style.a} href="/Contato">Contato</Link></li>
                                
                                 
                             </ul>
