@@ -54,6 +54,48 @@ INSERT INTO TB_FEEDBACK (DATA, STATUS, DESCRICAO, RESPONSAVEL, IMG_URL, REPORTE_
 INSERT INTO TB_FEEDBACK (DATA, STATUS, DESCRICAO, RESPONSAVEL, IMG_URL, REPORTE_ID, INSTITUICAO_ID) VALUES (CURRENT_TIMESTAMP, 'Pendente', 'Programação de ação conjunta', 'Rodrigo Oliveira', 'https://exemplo.com/feedback5.jpg', 5, 5);
 
 
-select * from tb_feedback;
-select * from tb_reporte;
-select * from tb_instituicao;
+-- RELATÓRIOS --
+
+-- Relatório de Usuários ordenados pelo nome em ordem crescente
+SELECT ID, NOME, EMAIL, TELEFONE
+FROM TB_USUARIO
+ORDER BY NOME ASC;
+
+-- Relatório de Reportes com data entre 2024-02-01 e 2024-05-01 e descrição contendo a palavra 'lixo'
+SELECT ID, DESCRICAO, DATA, URGENCIA, STATUS
+FROM TB_REPORTE
+WHERE DATA BETWEEN TO_DATE('2024-01-01', 'YYYY-MM-DD') AND TO_DATE('2024-05-01', 'YYYY-MM-DD')
+AND STATUS LIKE '%Fechado%';
+
+-- Relatório de Instituições com o nome em maiúsculas
+SELECT ID, UPPER(NOME) AS NOME, EMAIL, TELEFONE
+FROM TB_INSTITUICAO;
+
+-- Relatório de Feedbacks com o ano da data de criação
+SELECT ID, EXTRACT(YEAR FROM DATA) AS ANO, STATUS, DESCRICAO, RESPONSAVEL
+FROM TB_FEEDBACK;
+
+-- Relatório de contagem de Reportes por urgência
+SELECT URGENCIA, COUNT(*) AS TOTAL_REPORTES
+FROM TB_REPORTE
+GROUP BY URGENCIA;
+
+-- Relatório de Reportes com detalhes do usuário e do endereço
+SELECT R.ID, R.DESCRICAO, R.DATA, R.URGENCIA, E.ENDERECO, E.CIDADE
+FROM TB_REPORTE R
+JOIN TB_ENDERECO E ON R.ENDERECO_ID = E.ID;
+
+-- Relatório de Reportes que não possuem feedbacks
+SELECT R.ID, R.DESCRICAO, R.DATA, R.URGENCIA, R.STATUS
+FROM TB_REPORTE R
+LEFT JOIN TB_FEEDBACK F ON R.ID = F.REPORTE_ID
+WHERE F.ID IS NULL;
+
+COMMIT;
+
+
+
+
+
+
+
