@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CAC72205-FDC7-7430-A729-8553A3887B82" name="TB_USUARIO">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:37:19 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_USUARIO" id="60F9244B-D254-F567-315F-25C17CEEAC5D">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:38:25 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NOME" id="E0DACDEB-3909-54F5-F0C5-4484B8ECADC8">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:39:09 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="EMAIL" id="FA66EBDB-0E6A-130B-4954-6F77FCB86248">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:40:45 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TELEFONE" id="D0D81A89-7772-61CB-94C1-0B449ABCF914">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:41:11 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D0177B77-0370-3136-7B90-C2CCD45D5216" name="tb_usuario PK">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:38:40 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>60F9244B-D254-F567-315F-25C17CEEAC5D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

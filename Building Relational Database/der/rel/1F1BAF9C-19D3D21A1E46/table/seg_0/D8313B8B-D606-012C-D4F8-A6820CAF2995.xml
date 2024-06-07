@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D8313B8B-D606-012C-D4F8-A6820CAF2995" name="TB_INSTITUICAO">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>635A38E5-A096-9943-CA77-BB2F28F28EF3</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_INSTITUICAO" id="E545F292-8EE3-34B4-CA83-0582DEF69DC3">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>011204AA-C9C9-B017-472A-9BA79A1E4912</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOME" id="EF3FB722-F8D0-1F42-73AA-20782C469F3F">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>A4385434-4223-C033-14E9-E1440A23D96B</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL" id="A464DB24-95DA-6AF5-8D3F-6401F0EE6871">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>6D410746-DDA9-4EA5-7F8B-630896998EC1</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TELEFONE" id="B91A4FB5-EA92-BA45-CC78-EE607DC168C4">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>C0D13D5A-86C8-916F-48CE-50CAEF7E209A</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D4F79652-40D3-C08C-8E99-7D6EDA89E311" name="TB_INSTITUICAO_PK">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>A4C09EDE-9D4C-9E99-E9B9-EBBDD9F97618</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E545F292-8EE3-34B4-CA83-0582DEF69DC3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

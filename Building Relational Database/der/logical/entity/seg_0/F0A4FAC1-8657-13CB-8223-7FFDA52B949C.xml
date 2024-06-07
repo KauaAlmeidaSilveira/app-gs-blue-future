@@ -1,0 +1,149 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F0A4FAC1-8657-13CB-8223-7FFDA52B949C" name="TB_ENDERECO">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:43:24 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_ENDERECO" id="E5363FC6-E6E5-B29B-548B-869489129817">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:43:32 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ENDERECO" id="F62D681D-8C8D-794E-02AC-F3F59F595ADC">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:43:41 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="BAIRRO" id="9AEB7065-A27B-70AD-80F9-EB4FE8CA0699">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:43:53 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CIDADE" id="F595EC5F-A902-332A-65ED-5C47D75EBCCC">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:44:04 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ESTADO" id="F567514B-DF43-A1FA-A886-D325FBE97EAB">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:44:27 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CEP" id="486F924D-54F0-6B13-4EC2-D875CCE02C64">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:44:37 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="PAIS" id="AEA348D1-F191-AA8E-021B-7833AC1D6D4D">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:44:48 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="LAT" id="FBAE429F-BDE2-44DE-98E5-1B8CBB9A0D68">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:44:57 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="LNG" id="B5A19507-F6F3-4F9A-4FD9-19A092E80382">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:45:05 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="95895499-2F02-9193-2F4B-7D3BF5625C17" name="TB_ENDERECO PK">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:43:40 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E5363FC6-E6E5-B29B-548B-869489129817</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

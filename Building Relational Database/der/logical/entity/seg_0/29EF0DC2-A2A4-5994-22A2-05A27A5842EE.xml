@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="29EF0DC2-A2A4-5994-22A2-05A27A5842EE" name="TB_FONTE_POLUICAO">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:46:17 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_FONTE_POLUICAO" id="C640C40A-1E4D-A3D6-AF08-6FE124743C7E">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:46:31 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TIPO" id="07B3D414-675E-AE96-42AC-C239AD32C829">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:46:40 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DESCRICAO" id="CFFB4688-D06C-FA3F-D7D2-CD47837642A4">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:47:00 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5684AAE6-5FDF-8313-A7AB-BEDF7330178B" name="TB_FONTE_POLUICAO PK">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:46:39 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<engineerTo>
+<item key="1F1BAF9C-528A-8A24-04D0-19D3D21A1E46" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C640C40A-1E4D-A3D6-AF08-6FE124743C7E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,218 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A47A3C2D-0C4C-88B5-36EC-CABF6E263BA3" name="TB_REPORTE">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>A021BF81-DB7A-7DD9-0621-C946D9E21092</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_REPORTE" id="27D530A0-2CEE-58AA-9F0D-FBCE8D632FD9">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>CC78A948-7315-D83C-84B6-AF209772C293</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRICAO" id="8C0C2BBE-D9B6-9E95-AED8-09D850FAD0EC">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>3651CFA2-2742-4511-A20D-9F4F2EE9E6BE</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DATA" id="DE3CE581-10EE-90FF-5B91-10B45D98CC2C">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>06B3A4A8-D181-B1E9-F375-E3A782751359</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HORA" id="A86C355B-F741-0B8C-F585-70CACA90790E">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>FF050E24-1406-B303-A55F-92209AD35359</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="URGENCIA" id="A4B109B3-495B-DEE1-3FA4-5ECEFD5793EE">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>31C60952-5CF8-26EA-35E7-91A17401756F</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STATUS" id="CA388A5B-9A6C-E26A-D4B5-911540ECE5CB">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>623A8E0E-B676-4B0C-02F3-29042D880B47</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IMG_URL" id="7C8E72CF-FBFA-F8E0-4E1F-A4200E907886">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>FF80C4B6-4DEA-F51D-A8C7-4BD41BFB1609</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TB_ENDERECO_ID_ENDERECO" id="065B5744-5364-4590-A995-CA3C80F8B79A">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>86C57A56-B176-4EED-C51C-86329EF126A3</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="39A965C8-7C09-FA10-5C14-75A3920F9356" referredColumn="56976BD7-B9DB-A48E-D7D7-15E02FE02C7C"/>
+</associations>
+</Column>
+<Column name="TB_FONTE_POLUICAO_ID_FONTE_POLUICAO" id="A1AB7C95-A22C-FD8C-D18E-454B32F481A6">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>CDD54A4F-3969-93F5-AC1A-9B296D71E7F2</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EDCFE14D-2904-4714-EA3B-948F439B8667" referredColumn="A29BC6CB-9C93-7B95-8146-3FE3C241F873"/>
+</associations>
+</Column>
+<Column name="TB_USUARIO_ID_USUARIO" id="E0E575E6-1635-0761-2E3A-75E8FB58DF75">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>5502BBE5-B7A7-7824-D901-57FBD709727A</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E2C95F48-11F9-ABE6-6C87-8D8E38D16F5F" referredColumn="0AE114CC-BE62-9177-7F72-E145B07DF105"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4CBDB5C9-434B-317E-D6ED-A0777E285E18" name="TB_REPORTE_PK">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>8DA4E630-D86F-3BF9-4CD7-0C67BD99EF5A</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="27D530A0-2CEE-58AA-9F0D-FBCE8D632FD9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D1996185-4F36-6C5F-0EFE-C4DABF361606" name="TB_REPORTE__IDX">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>89CB2E3A-DEEC-DCA0-1F25-AD897F689E37</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="065B5744-5364-4590-A995-CA3C80F8B79A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4C24BA10-0E3E-283C-CCE5-BEFE96F33626" name="TB_REPORTE__IDXv1">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>0AC128C0-22D6-C298-6B36-5AB34F8AACF9</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="A1AB7C95-A22C-FD8C-D18E-454B32F481A6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="79494146-6AD6-868E-9257-6C9262CEDD9A" name="TB_REPORTE__IDXv2">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>17A97DF7-915A-ACCB-D199-255A105D4A72</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="E0E575E6-1635-0761-2E3A-75E8FB58DF75"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="11E13033-8A43-FA22-E647-87112A025E3A" name="TB_REPORTE_TB_ENDERECO_FK">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>89CB2E3A-DEEC-DCA0-1F25-AD897F689E37</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="065B5744-5364-4590-A995-CA3C80F8B79A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="36EFE028-FC56-20C2-29DA-9021FF541AA9" name="TB_REPORTE_TB_FONTE_POLUICAO_FK">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>0AC128C0-22D6-C298-6B36-5AB34F8AACF9</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A1AB7C95-A22C-FD8C-D18E-454B32F481A6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="39767597-179C-657B-AF2A-3E19A2BAB553" name="TB_REPORTE_TB_USUARIO_FK">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>17A97DF7-915A-ACCB-D199-255A105D4A72</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E0E575E6-1635-0761-2E3A-75E8FB58DF75"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="EDCFE14D-2904-4714-EA3B-948F439B8667" containerWithKeyObject="A47A3C2D-0C4C-88B5-36EC-CABF6E263BA3" localFKIndex="36EFE028-FC56-20C2-29DA-9021FF541AA9" name="TB_REPORTE_TB_FONTE_POLUICAO_FK">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>0AC128C0-22D6-C298-6B36-5AB34F8AACF9</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<referredTableLongName>TB_FONTE_POLUICAO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>FF43FFB1-5949-5A62-05FA-45CE1608859D</referredTableID>
+<keyObject>37C3531B-9FA1-76DA-8555-4614CB933668</keyObject>
+<referredKeyID>37C3531B-9FA1-76DA-8555-4614CB933668</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_FONTE_POLUICAO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

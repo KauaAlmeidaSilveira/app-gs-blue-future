@@ -1,0 +1,170 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B8E6AE10-47DC-AB17-F49D-7A44DE556E39" name="TB_FEEDBACK">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>CEC297B7-C8E1-069D-A849-366821C021AD</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_FEEDBACK" id="350C794B-4CA8-938D-1235-AE68EE21ECB1">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>F589361E-9C14-E2C0-CC13-C415CE48BDB6</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DATA" id="A38BD971-FC16-4B03-5AD0-505938ABDA89">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>C0131BA4-AE66-12F7-6AC3-637CB68AF25B</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STATUS" id="B40484F8-F31E-EA77-9C32-570B0591498E">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>7A53E588-B13F-8AF6-F850-FC3037A1D928</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRICAO" id="CDA66813-64B8-F5FC-B0B9-20B13F487648">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>FBE28C09-294C-5C86-F492-BB419E3E2685</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RESPONSAVEL" id="324230C7-5903-284C-5C34-AECAC638CED7">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>11FFAF54-8513-859A-BC29-D8809A61FFB1</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IMG_URL" id="38EFDC5C-7CFD-9D9E-F788-09A02F8E98A4">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>CB41AF66-48D1-B319-97E6-60D8079FD58B</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TB_INSTITUICAO_ID_INSTITUICAO" id="F6956051-A647-365C-EB42-43ED5DB23F0C">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>8BDEFCAC-39DC-3F84-7DCE-D8CA202B257D</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3121AFC8-10CC-A46D-6268-3F7640AFE045" referredColumn="E545F292-8EE3-34B4-CA83-0582DEF69DC3"/>
+</associations>
+</Column>
+<Column name="TB_REPORTE_ID_REPORTE" id="9A7B58F2-5489-4DE6-2CF7-CEDBB9E2292C">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>5CA8DC54-6A71-44B3-A593-699DDAEA2117</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E116166C-3043-83B4-2153-A933F758C2EE" referredColumn="27D530A0-2CEE-58AA-9F0D-FBCE8D632FD9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="779A0DFF-CFDE-3E78-DF7E-B2E9028705D1" name="TB_FEEDBACK_PK">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>C06F3849-C3F0-40ED-B0EE-2CD5F57FA5E4</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="350C794B-4CA8-938D-1235-AE68EE21ECB1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E46FB36E-3C06-489B-CD42-A14CC3AF2B1D" name="TB_FEEDBACK__IDX">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>E50915EA-3007-2F38-B881-A395853F8C54</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="9A7B58F2-5489-4DE6-2CF7-CEDBB9E2292C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3A7B9833-1E17-87AD-251B-F6BC6CF47848" name="TB_FEEDBACK__IDXv1">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<ownerDesignName>der</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>3A824351-7B18-4018-1E88-718327C182A1</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="F6956051-A647-365C-EB42-43ED5DB23F0C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AF2BD143-86FF-4CB8-A803-6F47AC3C3FA9" name="TB_FEEDBACK_TB_REPORTE_FK">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>E50915EA-3007-2F38-B881-A395853F8C54</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9A7B58F2-5489-4DE6-2CF7-CEDBB9E2292C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A7F913DC-AA40-C298-EC1C-FFB02EEF8639" name="TB_FEEDBACK_TB_INSTITUICAO_FK">
+<createdBy>Kaua</createdBy>
+<createdTime>2024-06-07 14:59:53 UTC</createdTime>
+<generatorID>3A824351-7B18-4018-1E88-718327C182A1</generatorID>
+<ownerDesignName>der</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F6956051-A647-365C-EB42-43ED5DB23F0C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
