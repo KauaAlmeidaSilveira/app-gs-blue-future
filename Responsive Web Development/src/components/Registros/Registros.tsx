@@ -211,9 +211,6 @@ const Registros = ({ selectedState }: RegistrosProps) => {
                 <p className={style.dados_reporte}><span className={style.span_dados}>Nível urgência: </span>{item.reporte.urgencia}</p>
                 <p className={style.dados_reporte}><span className={style.span_dados}>Status: </span>{item.reporte.status}</p>
               </div>
-              <div className={style.box_info_image}>
-                <p>URL da Imagem: {item.reporte.img_url}</p>
-              </div>
             </div>
             
             {item.feedback && (
@@ -239,12 +236,7 @@ const Registros = ({ selectedState }: RegistrosProps) => {
                         </div>
                       )}
                     </div>
-                <div className={style.box_info_image}>
-                      <p>URL da Imagem: {item.feedback.img_url}</p>
-                </div>
               </div>
-                
-
               </div>
               )}
               <div className={style.buttons_box}>

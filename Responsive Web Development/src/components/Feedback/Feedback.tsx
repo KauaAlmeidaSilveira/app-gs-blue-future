@@ -22,7 +22,7 @@ const Feedback: React.FC<FeedbackFormProps> = ({ onSubmit }) => {
         status,
         descricao,
         responsavel,
-        img_url: imgUrl,
+        img_url: 'img',
       },
       instituicao: {
         nome: nomeInstituicao,
@@ -62,10 +62,6 @@ const Feedback: React.FC<FeedbackFormProps> = ({ onSubmit }) => {
             <input className={style.input_dados} type="text" value={responsavel} onChange={(e) => setResponsavel(e.target.value)} required />
           </label>
 
-          <label className={style.label}>
-            URL da Imagem:
-            <input className={style.input_dados} type="text" value={imgUrl} onChange={(e) => setImgUrl(e.target.value)} />
-          </label>
 
           <label className={style.label}>
             Nome da Instituição:
