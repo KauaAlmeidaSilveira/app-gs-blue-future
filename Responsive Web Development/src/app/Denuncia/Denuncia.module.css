@@ -34,7 +34,7 @@
   }
   
 
-  @media (max-height: 700px) and (min-height:500px) {
+  @media (max-height: 800px) and (min-height:500px) {
     .box{
         height: 140vh;
     }

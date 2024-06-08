@@ -76,7 +76,7 @@
   }
 
 
-  @media (max-height: 700px) and (min-height:500px) {
+  @media (max-height: 800px) and (min-height:300px) {
     .container_contato{
         height: 30rem;
     }
