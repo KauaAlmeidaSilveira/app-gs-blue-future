@@ -24,7 +24,15 @@ const DenunciaMap = () => {
         <div className={style.box_state}>
           <StateSelect onStateChanged={handleStateChange} />
         </div>
-        <Registros selectedState={selectedState} />
+
+        <div className={style.registros}>
+          <Registros selectedState={selectedState} />
+        </div>
+
+
+        <div className={style.title_reportes}>
+          <h1>Reportes Mapeados</h1>
+        </div>
         <MapPage/>
       </div>
     </section>

@@ -15,6 +15,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 30px;
 }
 
 .box_state{
@@ -24,4 +25,10 @@
 .title_reportes{
     margin: 50px 0px;
     color: #fff;
+    font-size: 2rem;
+}
+
+.registros{
+    display: flex;
+    flex-direction: row;
 }

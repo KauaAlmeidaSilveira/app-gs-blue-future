@@ -49,7 +49,7 @@ const Form = () => {
       reporte: {
         descricao: descricaoReporte,
         urgencia: urgenciaReporte,
-        img_url: imgUrl,
+        img_url: 'aa',
       },
     };
 
@@ -128,10 +128,6 @@ const Form = () => {
             <input className={style.insert_dados} id="urgenciaReporte" type="number" min={1} max={5} value={urgenciaReporte} onChange={(e) => setUrgenciaReporte(e.target.value)} />
           </label>
         </div>
-      </div>
-      <div>
-        <label className={style.label} htmlFor="imgUrl">URL da Imagem:</label>
-        <input className={style.insert_dados} id="imgUrl" type="text" value={imgUrl} onChange={(e) => setImgUrl(e.target.value)} />
       </div>
       <div>
         <button className={style.button} type="button" onClick={handleSubmit}>Enviar</button>
