@@ -90,6 +90,10 @@
     align-items: center;
 }
 
+.img_dois{
+    object-fit: cover;
+}
+
 
 @keyframes pulsate {
     0% {
