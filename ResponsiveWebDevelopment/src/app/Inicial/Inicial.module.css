@@ -90,9 +90,6 @@
     align-items: center;
 }
 
-.img_dois{
-    object-fit: cover;
-}
 
 
 @keyframes pulsate {
@@ -190,7 +187,7 @@
     }
 }
 
-@media (max-width: 430px){
+@media (max-width: 500px){
     .button_inicial{
         padding: 1rem 13vw;
     }
@@ -202,5 +199,8 @@
     }
     .title_inicial{
         text-align: center;
+    }
+    .img_dois{
+        object-fit: cover;
     }
 }
