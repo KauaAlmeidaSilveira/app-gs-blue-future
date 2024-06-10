@@ -182,7 +182,7 @@
         margin-bottom: 20px;
     }
     .title_inicial{
-        margin-bottom: 10px;
+        margin-bottom: 0px;
     }
 }
 
@@ -195,5 +195,8 @@
     }
     .image_inicial{
         flex: 0;
+    }
+    .title_inicial{
+        text-align: center;
     }
 }

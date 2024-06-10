@@ -61,10 +61,10 @@
 
 @media (max-width: 800px) and (max-height:600px){
     .tam{
-        height: 250vh;
+        height: 200vh;
         width: 80vw;
     }
     .box{
-        height: 250vh;
+        height: 200vh;
     }
 }
