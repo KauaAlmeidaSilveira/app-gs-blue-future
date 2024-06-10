@@ -8,7 +8,7 @@ import Logo from '../../assets/logo.png'
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
 
     useEffect(() => {
         const handleResize = () => {
@@ -18,11 +18,13 @@ const Header = () => {
             }
         };
 
-        window.addEventListener('resize', handleResize);
+        if (typeof window !== 'undefined') {
+            window.addEventListener('resize', handleResize);
 
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
+            return () => {
+                window.removeEventListener('resize', handleResize);
+            };
+        }
     }, []);
 
     const toggleMenu = () => {
@@ -41,11 +43,10 @@ const Header = () => {
                         {(windowWidth >= 770 || !menuOpen) && (
                             <div className={style.menu_navegation}>
                                 <ul className={style.ul}>
-                                <li className={style.li}><Link className={style.a} href="/Inicial">Inicio</Link></li>
-                                <li className={style.li}><Link className={style.a} href="/Denuncia">Novo Reporte</Link></li>
-                                <li className={style.li}><Link className={style.a} href="/DenunciaMap">Reportes</Link></li>
-                                <li className={style.li}><Link className={style.a} href="/Contato">Contato</Link></li>
-                                
+                                    <li className={style.li}><Link className={style.a} href="/Inicial">Inicio</Link></li>
+                                    <li className={style.li}><Link className={style.a} href="/Denuncia">Novo Reporte</Link></li>
+                                    <li className={style.li}><Link className={style.a} href="/DenunciaMap">Reportes</Link></li>
+                                    <li className={style.li}><Link className={style.a} href="/Contato">Contato</Link></li>
                                 </ul>
                             </div>
                         )}
@@ -54,18 +55,16 @@ const Header = () => {
                     <div className={style.menu_icon} onClick={toggleMenu}>
                         <Image className={style.menuHeader} src={menu} alt='menu' />
                     
-                    {menuOpen && windowWidth < 950 && (
-                        <div className={style.menu_content}>
-                            <ul className={style.ul}>
-                                <li className={style.li}><Link className={style.a} href="/Inicial">Inicio</Link></li>
-                                <li className={style.li}><Link className={style.a} href="/Denuncia">Novo Reporte</Link></li>
-                                <li className={style.li}><Link className={style.a} href="/DenunciaMap">Reportes</Link></li>
-                                <li className={style.li}><Link className={style.a} href="/Contato">Contato</Link></li>
-                               
-                                
-                            </ul>
-                        </div>
-                    )}
+                        {menuOpen && windowWidth < 950 && (
+                            <div className={style.menu_content}>
+                                <ul className={style.ul}>
+                                    <li className={style.li}><Link className={style.a} href="/Inicial">Inicio</Link></li>
+                                    <li className={style.li}><Link className={style.a} href="/Denuncia">Novo Reporte</Link></li>
+                                    <li className={style.li}><Link className={style.a} href="/DenunciaMap">Reportes</Link></li>
+                                    <li className={style.li}><Link className={style.a} href="/Contato">Contato</Link></li>
+                                </ul>
+                            </div>
+                        )}
                     </div>
                 </div>
             </header>
