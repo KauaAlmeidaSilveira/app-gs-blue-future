@@ -34,7 +34,7 @@
   }
   
 
-  @media (max-height: 700px) and (min-height:500px) {
+  @media (max-height: 800px) and (min-height:500px) {
     .box{
         height: 140vh;
     }
@@ -61,10 +61,10 @@
 
 @media (max-width: 800px) and (max-height:600px){
     .tam{
-        height: 250vh;
+        height: 200vh;
         width: 80vw;
     }
     .box{
-        height: 250vh;
+        height: 200vh;
     }
 }

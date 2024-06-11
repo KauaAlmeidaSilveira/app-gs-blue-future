@@ -91,6 +91,7 @@
 }
 
 
+
 @keyframes pulsate {
     0% {
       box-shadow: 0 0 0 0 rgb(55, 0, 255);
@@ -182,11 +183,11 @@
         margin-bottom: 20px;
     }
     .title_inicial{
-        margin-bottom: 10px;
+        margin-bottom: 0px;
     }
 }
 
-@media (max-width: 430px){
+@media (max-width: 500px){
     .button_inicial{
         padding: 1rem 13vw;
     }
@@ -195,5 +196,11 @@
     }
     .image_inicial{
         flex: 0;
+    }
+    .title_inicial{
+        text-align: center;
+    }
+    .img_dois{
+        object-fit: cover;
     }
 }

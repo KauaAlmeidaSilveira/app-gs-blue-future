@@ -129,14 +129,14 @@
         flex-direction: column;
     }
     .insert_dados{
-        width: 40vw;
+        width: 60vw;
     }
 
     .areaText{
-        width: 40vw;
+        width: 60vw;
     }
     .label{
-        font-size: 0.5rem;
+        font-size: 0.8rem;
     }
 }
      
