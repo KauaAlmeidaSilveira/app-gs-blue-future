@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d08a0ff1-2c6d-46e6-abe9-1945f0a50be1" name="Changes" comment="introduction mockito">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/erudio/CourseBusiness.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/erudio/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/erudio/service/CourseService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/erudio/business/CourseBusinessTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/erudio/services/stubs/CourseServiceStub.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;KauaAlmeidaSilveira&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/KauaAlmeidaSilveira/app-gs-blue-future&quot;,
+    &quot;accountId&quot;: &quot;2e8d27ad-5804-497b-81cc-5b0ffe887a8a&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2iIq1J7yZa4GsDG4S8naGmhNvVb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.CourseBusinessTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CourseBusinessTest.testCoursesRelatedToSpring_When_UsingAFooBarStudent.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CourseBusinessTest.testCoursesRelatedToSpring_When_UsingAStub.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Kaua/Desktop/DEV/app-gs-blue-future/introduction.mockito/src/test&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Kaua\Desktop\DEV\app-gs-blue-future\introduction.mockito\src\test" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.CourseBusinessTest">
+    <configuration name="CourseBusinessTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="introduction.mockito" />
+      <option name="PACKAGE_NAME" value="br.com.erudio.business" />
+      <option name="MAIN_CLASS_NAME" value="br.com.erudio.business.CourseBusinessTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CourseBusinessTest.testCoursesRelatedToSpring_When_UsingAFooBarStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="introduction.mockito" />
+      <option name="PACKAGE_NAME" value="br.com.erudio.business" />
+      <option name="MAIN_CLASS_NAME" value="br.com.erudio.business.CourseBusinessTest" />
+      <option name="METHOD_NAME" value="testCoursesRelatedToSpring_When_UsingAFooBarStudent" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CourseBusinessTest.testCoursesRelatedToSpring_When_UsingAStub" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="introduction.mockito" />
+      <option name="PACKAGE_NAME" value="br.com.erudio.business" />
+      <option name="MAIN_CLASS_NAME" value="br.com.erudio.business.CourseBusinessTest" />
+      <option name="METHOD_NAME" value="testCoursesRelatedToSpring_When_UsingAStub" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CourseBusinessTest" />
+        <item itemvalue="JUnit.CourseBusinessTest.testCoursesRelatedToSpring_When_UsingAFooBarStudent" />
+        <item itemvalue="JUnit.CourseBusinessTest.testCoursesRelatedToSpring_When_UsingAStub" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="introduction mockito" />
+    <option name="LAST_COMMIT_MESSAGE" value="introduction mockito" />
+  </component>
+</project>
